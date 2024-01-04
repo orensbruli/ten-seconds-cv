@@ -7,11 +7,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install LaTeX packages
 RUN apt-get update && apt-get install -y \
-     texlive \
-     texlive-xetex \
-     texlive-luatex \
-     texlive-latex-extra \
-     texlive-pstricks
+    texlive \
+    texlive-xetex \
+    texlive-luatex \
+    texlive-latex-extra \
+    texlive-fonts-extra \
+    texlive-pstricks
 
 # Set working directory
 WORKDIR /latex_content
