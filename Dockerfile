@@ -1,15 +1,18 @@
 
 # Use an official Ubuntu base image
-FROM ubuntu:latest
+FROM ubuntu:22.04
+
+# Avoid prompts from apt
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install LaTeX packages
 RUN apt-get update && apt-get install -y \
-    texlive \
-    texlive-xetex \
-    texlive-lualatex \
-    texlive-math-extra \
-    texlive-fonts-extra \
-    texlive-pstricks
+     texlive \
+     texlive-xetex \
+     texlive-luatex \
+     texlive-math-extra \
+     texlive-fonts-extra \
+     texlive-pstricks 
 
 # Set working directory
 WORKDIR /usr/src/app
