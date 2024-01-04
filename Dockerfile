@@ -10,9 +10,8 @@ RUN apt-get update && apt-get install -y \
      texlive \
      texlive-xetex \
      texlive-luatex \
-     texlive-math-extra \
-     texlive-fonts-extra \
-     texlive-pstricks 
+     texlive-latex-extra \
+     texlive-pstricks
 
 # Set working directory
 WORKDIR /usr/src/app
