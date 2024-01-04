@@ -22,4 +22,4 @@ COPY . /latex_content
 # Note: For Font Awesome support, compile with LuaLaTeX instead of XeLaTeX
 # Default command to compile the LaTeX document using XeLaTeX
 # This command can be overridden when running the container
-CMD ["xelatex", "template.tex"]
+CMD ["xelatex", "cv-piotr-kowalski.tex"]
