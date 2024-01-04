@@ -1,0 +1,27 @@
+
+name: LaTeX Build and Upload
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build Docker Image
+        run: docker build -t latex-build .
+
+      - name: Run Docker Container
+        run: docker run --name latex-container latex-build
+
+      - name: Copy PDF from Docker Container
+        run: docker cp latex-container:/usr/src/app/output.pdf .
+
+      - name: Upload PDF as Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: compiled-pdf
+          path: output.pdf
