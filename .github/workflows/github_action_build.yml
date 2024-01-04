@@ -30,7 +30,7 @@ jobs:
             -t latex-build .
 
       - name: Run Docker Container
-        run: docker run --name latex-container latex-build
+        run: docker run -v $(pwd):/latex_content --name latex-container latex-build /bin/sh -c "xelatex cv-piotr-kowalski.tex"
 
       - name: Copy PDF from Docker Container
         run: docker cp latex-container:/latex_content/cv-piotr-kowalski.pdf output.pdf
