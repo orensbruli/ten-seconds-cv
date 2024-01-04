@@ -14,10 +14,10 @@ RUN apt-get update && apt-get install -y \
      texlive-pstricks
 
 # Set working directory
-WORKDIR /usr/src/app
+WORKDIR /latex_content
 
 # Copy the LaTeX files into the container
-COPY . .
+COPY . /latex_content
 
 # Note: For Font Awesome support, compile with LuaLaTeX instead of XeLaTeX
 # Default command to compile the LaTeX document using XeLaTeX
