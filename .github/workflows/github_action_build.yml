@@ -33,7 +33,7 @@ jobs:
         run: docker run --name latex-container latex-build
 
       - name: Copy PDF from Docker Container
-        run: docker cp latex-container:/usr/src/app/output.pdf .
+        run: docker cp latex-container:/latex_content/cv-piotr-kowalski.pdf output.pdf
 
       - name: Upload PDF as Artifact
         uses: actions/upload-artifact@v2
