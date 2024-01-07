@@ -17,7 +17,9 @@ RUN apt-get update && apt-get install -y \
     texlive-fonts-extra \
     texlive-pstricks
 
-    # Set working directory
+RUN apt-get update && apt-get install -y \
+    wget
+# Set working directory
 WORKDIR /latex_content
 
 # Note: For Font Awesome support, compile with LuaLaTeX instead of XeLaTeX
