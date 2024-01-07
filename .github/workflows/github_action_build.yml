@@ -30,10 +30,10 @@ jobs:
             -t latex-build .
 
       - name: Run Docker Container
-        run: docker run -v $(pwd):/latex_content --name latex-container latex-build /bin/sh -c "xelatex cv-piotr-kowalski.tex"
+        run: docker run -v $(pwd):/latex_content --name latex-container latex-build /bin/sh -c "make pdf"
 
       - name: Copy PDF from Docker Container
-        run: docker cp latex-container:/latex_content/cv-piotr-kowalski.pdf output.pdf
+        run: docker cp latex-container:/latex_content/rendered.pdf output.pdf
 
       - name: Upload PDF as Artifact
         uses: actions/upload-artifact@v4
