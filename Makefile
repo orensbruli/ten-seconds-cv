@@ -30,6 +30,7 @@ pdf:
 	mkdir -p build/pdf/
 	cp latex/* build/pdf/
 	cp data.md build/pdf/
+	wget --output-document=build/pdf/img.jpg  https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYRh5Ban9xwmHesxqfizee_30j4WBP55CTzwW_GOZOMLVlTaA3wK_kPcIFl4j0SaqsuJB5IlPMl5xCuj-itvlzjLBiYp
 	cd build/pdf && pandoc data.md --pdf-engine xelatex --template $(TEX_TEMPLATE) -o $(TEX)
 	cd build/pdf && pandoc data.md --pdf-engine xelatex --template page1sidebar.template.tex -o page1sidebar.tex
 	cd build/pdf && pandoc data.md --pdf-engine xelatex --template page2sidebar.template.tex -o page2sidebar.tex
