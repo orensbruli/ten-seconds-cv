@@ -31,7 +31,8 @@ pdf:
 	cp latex/* build/pdf/
 	cp data.md build/pdf/
 	cd build/pdf && pandoc data.md --pdf-engine xelatex --template $(TEX_TEMPLATE) -o $(TEX)
-	cd build/pdf && xelatex -no-pdf $(TEX)
+	cd build/pdf && pandoc data.md --pdf-engine xelatex --template page1sidebar.template.tex -o page1sidebar.tex
+	cd build/pdf && pandoc data.md --pdf-engine xelatex --template page2sidebar.template.tex -o page2sidebar.tex
 	cd build/pdf && xelatex -no-pdf $(TEX)
 	cd build/pdf && xelatex $(TEX)
 	cp build/pdf/$(PDF) ./rendered.pdf

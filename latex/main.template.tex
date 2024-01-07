@@ -65,7 +65,7 @@ $endfor$
 \begin{document}
 \name{$personal_info.name$}
 \tagline{$personal_info.job_title$}
-\photo{2.5cm}{2}
+\photo{2.5cm}{img}
 \personalinfo{%
   % Not all of these are required!
   % You can add your own with \printinfo{symbol}{detail}
@@ -89,69 +89,22 @@ $endfor$
 %% not need to align the top of the contents to any
 %% \cvsection title in the "main" bar.
 \cvsection[page1sidebar]{Experience}
-\cvevent{Senior Associate Analyst}{Lafarge Holcim India Pvt Ltd}{Apr 2019 - Present}{Bangalore, India}
+$for(experiences)$
+\cvevent{$experiences.role$}{$experiences.company$}{$experiences.duration$}{$experiences.location$}
 \begin{itemize}
-\item Working with latest ionic - 4 along with Bootstrap.
-\item Having sound knowledge in Sencha Touch with latest UI frameworks.
-\item Strong skill in Angular material along with Angular JS 7.
-\item Integrate hybrid as well native plugin for mobile and PWA app.
+$for(experiences.responsibilities)$
+  \item $experiences.responsibilities$
+$endfor$
 \end{itemize}
-\cvevent{Software Consultant}{Capita India Pvt Ltd}{Nov 2018 - Apr 2019}{Bangalore, India}
-\begin{itemize}
-\item Working with latest ionic - 4 along with Bootstrap.
-\item Having sound knowledge in Sencha Touch with latest UI frameworks.
-\item Strong skill in Angular material along with Angular JS 7.
-\item Integrate hybrid as well native plugin for mobile and PWA app.
-\item Excellent knoeledge in Hybrid as well cross platform technology along with node , Express and Mongo DB.
-\end{itemize}
-\cvevent{Hybrid / Cross Platform Mobile Application Developer}{Synoverge Technologies}{May 2017 - Oct 2018}{Ahmadabad , India}
-\begin{itemize}
-\item Working with Insurance management domain
-\item A well known company's insurance management app developed.
-\item Overall 10000+ claim agents use my mobile app that I developed individually
-\item Having a excellent team handling capability 
-\item Working with USA based clients since 2017
-\end{itemize}
-\cvevent{Software Engineer}{Synoverge Technologies}{Dec 2016 -  May 2017 }{Ahmedabad, India}
-\begin{itemize}
-\item Work in Seven layer .Net MVC architecture with AngularJS.
-\item Use AngularJS 1 for MVC 5 integration with .Net.
-\item Work with ORACLE Server Engine.
-\item Actively adopt new mobile technology like, flutter,React Native too.
-\end{itemize}
-\cvevent{Associate Software Engineer}{Aashtha Solution Pvt Ltd}{Jul 2012 - May 2013}{Surat, India}
-\begin{itemize}
-\item Work in Seven layer .Net MVC architecture with AngularJS.
-\item Use AngularJS 1 for MVC 5 integration with .Net.
-\item Work with ORACLE Server Engine.
-\item Actively adopt new mobile and web technology as per market needs.
-\end{itemize}
-\cvevent{ Mobile Application Developer }{Individual}{Present.. }{Mumbai, India}
-\begin{itemize}
-\item Developing a new creative apps and games for both android and iOS platform.
-\item Starting to individual development for react-native application with latest UI framework along with flux and redux methodology.
-\end{itemize}
+$endfor$
 
-% \divider
-
-% \cvevent{Product Engineer}{Google}{23 June 1999 -- 2001}{Palo Alto, CA}
-
-% \begin{itemize}
-% \item Joined the company as employe \#20 and female employee \#1
-% \item Developed targeted advertisement in order to use user's search queries and show them related ads
-% \end{itemize}
 
 
 \cvsection[page2sidebar]{So far Project Experience }
-\cvachievement{\faMedkit}{Policy Insurance Portal Solution}{It's actually well known company insurance portal. All the policy holder buy or renew policy, as well we provide a claim facility too for instant resolution.}
-
+$for(projects)$
+\cvachievement{$projects.icon$}{$projects.title$}{$projects.description$}
 \divider
-\cvachievement{\faConnectdevelop}{Survey Tracking App.}{ Its US based client survey tracking app through which client make a survey for an individual vehicle as per requirement}
-\divider
-\cvachievement{\faNewspaperO}{ Insurance Policy Claim management App.}{Its related to customer claim management system, through which agent report a claim related to policy along with the insurance paradigms}
-
-\divider
-\cvachievement{\faOutdent}{Game Development}{ Individual game developer using hybrid and react native platforms. Currently total 3 mobile game deployed on play store.}
+$endfor$
 
 
 
