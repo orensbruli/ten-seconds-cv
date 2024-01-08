@@ -40,3 +40,13 @@ jobs:
         with:
           name: compiled-pdf
           path: output.pdf
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        if: ${{ contains(github.ref, 'tags') }}
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: output.pdf
+          asset_name: esteban_martinena_cv.pdf
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "Latest version of my CV."
