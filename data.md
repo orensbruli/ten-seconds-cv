@@ -158,4 +158,6 @@ color_scheme:
     color: "SlateGrey"
   - name: "body"
     color: "LightGrey"
+  - name:  "tagline"
+    color: "VividPurple"
 ---
