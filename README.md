@@ -4,8 +4,15 @@
 
 This template I use for my own resume/CV.
 
+```shell
+docker  build -t latex-cv .
+docker run -v $(pwd):/latex_content latex-cv /bin/sh -c "make pdf"
+#docker run -v $(pwd):/latex_content --name latex-container latex-cv /bin/sh -c "make pdf"
+#docker cp latex-container:/latex_content/cv-piotr-kowalski.pdf output.pdf
+#docker remove /latex-container
+```
 
-![CV Screenshot](cv-piotr-kowalski.png)
+
 
 ## Install pre-requisites (Windows)
 
@@ -63,7 +70,7 @@ The elements comes from several templates, including:
 
 > MIT License
 
-> Copyright (c) 2019 Piotr Kowalski
+> Copyright (c) 2019 Esteban Martinena
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
