@@ -49,10 +49,9 @@
 $for(colors)$
 \definecolor{$colors.name$}{HTML}{$colors.code$}
 $endfor$
-\colorlet{heading}{VividPurple}
-\colorlet{accent}{VividPurple}
-\colorlet{emphasis}{SlateGrey}
-\colorlet{body}{LightGrey}
+$for(color_scheme)$
+\colorlet{$color_scheme.name$}{$color_scheme.color$}
+$endfor$
 
 % Change the bullets for itemize and rating marker
 % for \cvskill if you want to
@@ -111,13 +110,10 @@ $endfor$
 
 
 \cvsection{Hobbies}
-
-\cvachievement{\faMedkit}{Body Building}{Workout on daily basis}
-
+$for(hobbies)$
+\cvachievement{$hobbies.icon$}{$hobbies.title$}{$hobbies.description$}
 \divider
-\cvachievement{\faConnectdevelop}{Tracking}{Going for mount climbing on every single year}
-\divider
-\cvachievement{\faNewspaperO}{ Playing Games}{Excited to play each and every outdoor games}
+$endfor$
 
 \clearpage
 
