@@ -19,7 +19,7 @@ pdf:
 	pandoc data.md --pdf-engine xelatex --template page1sidebar.template.tex -o page1sidebar.tex ; \
 	pandoc data.md --pdf-engine xelatex --template page2sidebar.template.tex -o page2sidebar.tex ; \
 	pandoc data.md --pdf-engine xelatex --template $(TEX_TEMPLATE) -o $(TEX) ; \
-	xelatex $(TEX)
+	xelatex -shell-escape -output-driver="xdvipdfmx -z 0" $(TEX)
 
 	cp build/pdf/$(PDF) ./rendered.pdf
 	make clean-pdf
