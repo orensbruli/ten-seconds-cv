@@ -48,7 +48,7 @@ experiences:
   - role: "Python Dev/DevOps"
     company: "Gamma Solutions (Diggia)"
     duration: "01/12/2020 - 31/08/2021"
-    location: "Cáceres, Spain (Remote"
+    location: "Cáceres, Spain (Remote)"
     responsibilities:
       - "DevOps for the project AUTONOMOUS DRIVING OF ELECTRIC VEHICLE FLEET within the 5G PILOT PROJECT: CITY OF CÁCERES"
       - "Python developer for DSR architecture (Robocomp)"
