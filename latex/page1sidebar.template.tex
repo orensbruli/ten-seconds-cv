@@ -1,0 +1,38 @@
+
+\cvsection{Life Philosophy}
+\begin{quote}
+$content.life_quote$
+\end{quote}
+\cvsection{Education}
+$for(education)$
+\cvevent{$education.degree$}{$education.institution$}{$education.duration$}{$education.location$}
+$endfor$
+
+\cvsection{Technical Strength}
+$for(skills)$
+\cvskill{$skills.name$}{$skills.level$}
+% \divider
+$endfor$
+
+\cvsection{Most Proud of}
+$for(achievements)$
+\cvachievement{$achievements.icon$}{$achievements.title$}{$achievements.description$}
+\divider
+$endfor$
+
+\cvsection{Strengths}
+$for(tags)$
+\cvtag{$tags$}
+$endfor$
+
+\cvsection{Languages}
+$for(language)$
+\cvskill{$language.name$}{$language.level$}
+% \divider
+$endfor$
+
+
+
+
+
+

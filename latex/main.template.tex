@@ -1,0 +1,121 @@
+%%%%%%%%%%%%%%%%%
+% This is an example CV created using altacv.cls (v1.1.4, 27 July 2018) written by
+% LianTze Lim (liantze@gmail.com), based on the
+% Cv created by BusinessInsider at http://www.businessinsider.my/a-sample-resume-for-marissa-mayer-2016-7/?r=US&IR=T
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you want to use \orcid or the
+%% academicons icons, add "academicons"
+%% to the \documentclass options.
+%% Then compile with XeLaTeX or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper]{altacv}
+
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages.
+%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols.
+%% When using the "academicons" option,
+%% Compile with LuaLaTeX for best results. If you
+%% want to use XeLaTeX, you may need to install
+%% Academicons.ttf in your operating system's font %% folder.
+
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1cm,bottom=1cm}
+
+% Change the font if you want to.
+
+% If using pdflatex:
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+
+% If using xelatex or lualatex:
+% \setmainfont{Lato}
+
+% Change the colours if you want to
+$for(colors)$
+\definecolor{$colors.name$}{HTML}{$colors.code$}
+$endfor$
+$for(color_scheme)$
+\colorlet{$color_scheme.name$}{$color_scheme.color$}
+$endfor$
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+%\addbibresource{sample.bib}
+
+\begin{document}
+\name{$personal_info.name$}
+\tagline{$personal_info.job_title$}
+\photo{2.5cm}{img.jpg}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{$personal_info.name$}
+  \phone{$for(personal_info.phone)$$personal_info.phone$$sep$ / $endfor$}
+  \location{$personal_info.location$}
+  \linkedin{$personal_info.linkedin$}
+  \github{$personal_info.github$}
+}
+
+%% Make the header extend all the way to the right, if you want.
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+\cvsection[page1sidebar]{Experience}
+$for(experiences)$
+\cvevent{$experiences.role$}{$experiences.company$}{$experiences.duration$}{$experiences.location$}
+\begin{itemize}
+$for(experiences.responsibilities)$
+  \item $experiences.responsibilities$
+$endfor$
+\end{itemize}
+$endfor$
+
+
+
+\cvsection[page2sidebar]{So far Project Experience }
+$for(projects)$
+\cvachievement{$projects.icon$}{$projects.title$}{$projects.description$}
+\divider
+$endfor$
+
+
+
+
+
+\cvsection{Hobbies}
+$for(hobbies)$
+\cvachievement{$hobbies.icon$}{$hobbies.title$}{$hobbies.description$}
+\divider
+$endfor$
+
+\clearpage
+
+
+\end{document}

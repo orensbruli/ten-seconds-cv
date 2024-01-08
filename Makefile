@@ -1,27 +1,29 @@
 SHELL   = /bin/sh
 
-FILE0   = cv-piotr-kowalski
+FILE0   = main
+TEX_TEMPLATE = $(FILE0).template.tex
 TEX     = $(FILE0).tex
-XDV     = $(FILE0).xdv
 PDF     = $(FILE0).pdf
-PDFOUT  = $(FILE0)-encrypted.pdf
 
+all: pdf
 
-all:
-	make tex
+pdf:
+	mkdir -p build/pdf/
+	cp latex/* build/pdf/
+	cp data.md build/pdf/
+	wget --output-document=build/pdf/img.jpg $$(yq e '.image' data.md | grep https)
 
-tex:
-	xelatex -no-pdf $(TEX)
-	xelatex -no-pdf $(TEX)
-	#xdvipdfmx.exe $(XDV)
-	xelatex $(TEX)
-	make clean
-pw:
-	pdftk $(PDF) output $(PDFOUT) owner_pw ownerpasswd user_pw userpasswd compress encrypt_128bit
+	cd build/pdf/; \
+	pandoc data.md --pdf-engine xelatex --template page1sidebar.template.tex -o page1sidebar.tex ; \
+	pandoc data.md --pdf-engine xelatex --template page2sidebar.template.tex -o page2sidebar.tex ; \
+	pandoc data.md --pdf-engine xelatex --template $(TEX_TEMPLATE) -o $(TEX) ; \
+	xelatex -shell-escape -output-driver="xdvipdfmx -z 0" $(TEX)
 
-help:
-	echo "USAGE: make [all/tex/handout/pw/clean]"
+	cp build/pdf/$(PDF) ./rendered.pdf
+
+clean-pdf:
+	rm -rf build/pdf/
 
 clean:
-	rm -f *.aux *.dvi *.idx *.ilg *.ind *.log *.nav *.out *.snm *.xdv *.toc *.synctex.gz *~
+	rm -rf build/
 
