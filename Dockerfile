@@ -9,6 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
     pandoc \
     make \
+    wget \
     texlive-bibtex-extra \
     texlive \
     texlive-xetex \
@@ -17,8 +18,10 @@ RUN apt-get update && apt-get install -y \
     texlive-fonts-extra \
     texlive-pstricks
 
-RUN apt-get update && apt-get install -y \
-    wget
+RUN wget --output-document=/usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 && \
+    chmod +x /usr/local/bin/yq && \
+    yq --version
+
 # Set working directory
 WORKDIR /latex_content
 
