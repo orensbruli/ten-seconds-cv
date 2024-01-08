@@ -147,4 +147,13 @@ colors:
     code: "2E2E2E"
   - name: LightGrey
     code: "666666"
+color_scheme:
+  - name: "heading"
+    color: "VividPurple"
+  - name: "accent"
+    color: "VividPurple"
+  - name: "emphasis"
+    color: "SlateGrey"
+  - name: "body"
+    color: "LightGrey"
 ---
