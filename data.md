@@ -131,7 +131,15 @@ tags:
 #  - title: "Deliver application on Time"
 #    icon: "\\faLineChart"
 #    description: "Continuously work on various platform and expand learning capability in terms of quality"
-
+hobbies:
+  - title: "Photography"
+    icon: "\\faCamera"
+    description: |
+        I love to capture the moment and make it memorable.
+        Indeed, I worked as a freelance photographer for 10 years.
+  - title: "Roller Derby"
+    icon: "\\faBicycle"
+    description: "Have you heard about the Roller Derby? You should try it!"
 colors:
   - name: VividPurple
     code: "008080"
