@@ -7,16 +7,17 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install LaTeX packages
 RUN apt-get update && apt-get install -y \
-    pandoc \
     make \
-    wget \
-    texlive-bibtex-extra \
+    pandoc \
     texlive \
-    texlive-xetex \
-    texlive-luatex \
-    texlive-latex-extra \
+    texlive-bibtex-extra \
     texlive-fonts-extra \
-    texlive-pstricks
+    texlive-latex-base \
+    texlive-latex-extra \
+    texlive-luatex \
+    texlive-pstricks \
+    texlive-xetex \
+    wget
 
 RUN wget --output-document=/usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 && \
     chmod +x /usr/local/bin/yq && \
