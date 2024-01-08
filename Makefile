@@ -5,9 +5,7 @@ TEX_TEMPLATE = $(FILE0).template.tex
 TEX     = $(FILE0).tex
 PDF     = $(FILE0).pdf
 
-
-all:
-	make pdf
+all: pdf
 
 pdf:
 	mkdir -p build/pdf/
@@ -22,8 +20,10 @@ pdf:
 	xelatex -shell-escape -output-driver="xdvipdfmx -z 0" $(TEX)
 
 	cp build/pdf/$(PDF) ./rendered.pdf
-	make clean-pdf
 
 clean-pdf:
-	rm -rf build/pdf
+	rm -rf build/pdf/
+
+clean:
+	rm -rf build/
 
