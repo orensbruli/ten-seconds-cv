@@ -72,19 +72,19 @@ experiences:
       - "DSL"
       - "Unit testing & Mock"
       - "Docker"
-projects:
-  - icon: "\\faMedkit"
-    title: "Policy Insurance Portal Solution"
-    description: "It's actually a well-known company insurance portal. All the policyholders buy or renew policies, as well as provide a claim facility too for instant resolution."
-  - icon: "\\faConnectdevelop"
-    title: "Survey Tracking App."
-    description: "A US-based client survey tracking app through which clients make a survey for an individual vehicle as per requirement."
-  - icon: "\\faNewspaperO"
-    title: "Insurance Policy Claim Management App."
-    description: "Related to customer claim management system, through which agents report a claim related to policy along with the insurance paradigms."
-  - icon: "\\faOutdent"
-    title: "Game Development"
-    description: "Individual game developer using hybrid and react native platforms. Currently, a total of 3 mobile games deployed on the play store."
+#projects:
+#  - icon: "\\faMedkit"
+#    title: "Policy Insurance Portal Solution"
+#    description: "It's actually a well-known company insurance portal. All the policyholders buy or renew policies, as well as provide a claim facility too for instant resolution."
+#  - icon: "\\faConnectdevelop"
+#    title: "Survey Tracking App."
+#    description: "A US-based client survey tracking app through which clients make a survey for an individual vehicle as per requirement."
+#  - icon: "\\faNewspaperO"
+#    title: "Insurance Policy Claim Management App."
+#    description: "Related to customer claim management system, through which agents report a claim related to policy along with the insurance paradigms."
+#  - icon: "\\faOutdent"
+#    title: "Game Development"
+#    description: "Individual game developer using hybrid and react native platforms. Currently, a total of 3 mobile games deployed on the play store."
 
 references:
   - name: "Steven! RAGNARÖK / Infrastructure Technical Lead"
@@ -124,13 +124,13 @@ tags:
     - Problem solver
     - Self-motivated
     - Fast learner
-achievements:
-  - title: "Best Mobile App Developer"
-    icon: "\\faTrophy"
-    description: "Individual working on various mobile apps and sink to deliver before time"
-  - title: "Deliver application on Time"
-    icon: "\\faLineChart"
-    description: "Continuously work on various platform and expand learning capability in terms of quality"
+#achievements:
+#  - title: "Best Mobile App Developer"
+#    icon: "\\faTrophy"
+#    description: "Individual working on various mobile apps and sink to deliver before time"
+#  - title: "Deliver application on Time"
+#    icon: "\\faLineChart"
+#    description: "Continuously work on various platform and expand learning capability in terms of quality"
 
 colors:
   - name: VividPurple
