@@ -21,7 +21,7 @@ education:
     location: "Cáceres, Spain"
 experiences:
   - role: "DevOps"
-    company: "Open Robotics - RMF (Contractor)"
+    company: "Open Robotics (Contractor)"
     duration: "01/08/2022 - 12/12/2022"
     location: "Singapore (Remote)"
     responsibilities:
@@ -128,15 +128,15 @@ tags:
 #  - title: "Deliver application on Time"
 #    icon: "\\faLineChart"
 #    description: "Continuously work on various platform and expand learning capability in terms of quality"
-hobbies:
-  - title: "Photography"
-    icon: "\\faCamera"
-    description: |
-        I love to capture the moment and make it memorable.
-        Indeed, I worked as a freelance photographer for 10 years.
-  - title: "Roller Derby"
-    icon: "\\faBicycle"
-    description: "Have you heard about the Roller Derby? You should try it!"
+#hobbies:
+#  - title: "Photography"
+#    icon: "\\faCamera"
+#    description: |
+#        I love to capture the moment and make it memorable.
+#        Indeed, I worked as a freelance photographer for 10 years.
+#  - title: "Roller Derby"
+#    icon: "\\faBicycle"
+#    description: "Have you heard about the Roller Derby? You should try it!"
 colors:
   - name: VividPurple
     code: "008080"
@@ -156,7 +156,7 @@ color_scheme:
   - name: "heading"
     color: "VividPurple"
   - name: "headingrule"
-    color: "GoldenEarth"
+    color: "black"
   - name: "subheading"
     color: "PastelRed"
   - name: "accent"
