@@ -1,6 +1,6 @@
 name: LaTeX Build and Upload
 
-on: [push, pull_request]
+on: [push, workflow_dispatch]
 
 jobs:
   build:
