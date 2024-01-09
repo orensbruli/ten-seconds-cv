@@ -12,38 +12,34 @@
 %% version 2003/12/01 or later.
 %%%%%%%%%%%%%%%%
 
-%% If you want to use \orcid or the
-%% academicons icons, add "academicons"
-%% to the \documentclass options.
-%% Then compile with XeLaTeX or LuaLaTeX.
-% \documentclass[10pt,a4paper,academicons]{altacv}
-
 %% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
 % \documentclass[10pt,a4paper,normalphoto]{altacv}
 
-\documentclass[10pt,a4paper]{altacv}
-
-%% AltaCV uses the fontawesome and academicon fonts
-%% and packages.
-%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols.
-%% When using the "academicons" option,
-%% Compile with LuaLaTeX for best results. If you
-%% want to use XeLaTeX, you may need to install
-%% Academicons.ttf in your operating system's font %% folder.
-
+\documentclass[10pt,a4paper,ragged2e]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
 
 % Change the page layout if you need to
-\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1cm,bottom=1cm}
+\geometry{left=1cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
 
-% Change the font if you want to.
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
 
-% If using pdflatex:
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[default]{lato}
 
-% If using xelatex or lualatex:
-% \setmainfont{Lato}
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
 
 % Change the colours if you want to
 $for(colors)$
@@ -53,10 +49,32 @@ $for(color_scheme)$
 \colorlet{$color_scheme.name$}{$color_scheme.color$}
 $endfor$
 
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
 % Change the bullets for itemize and rating marker
 % for \cvskill if you want to
-\renewcommand{\itemmarker}{{\small\textbullet}}
-\renewcommand{\ratingmarker}{\faCircle}
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the duration/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+%\input{pubs-num.cfg}
 
 %% sample.bib contains your publications
 %\addbibresource{sample.bib}
@@ -64,7 +82,10 @@ $endfor$
 \begin{document}
 \name{$personal_info.name$}
 \tagline{$personal_info.job_title$}
-\photo{2.5cm}{img.jpg}
+%% You can add multiple photos on the left or right
+\photoR{2.5cm}{img.jpg}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
 \personalinfo{%
   % Not all of these are required!
   % You can add your own with \printinfo{symbol}{detail}
@@ -76,18 +97,20 @@ $endfor$
 }
 
 %% Make the header extend all the way to the right, if you want.
-\begin{fullwidth}
+%\begin{fullwidth}
 \makecvheader
-\end{fullwidth}
+%\end{fullwidth}
 
 %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
 \AtBeginEnvironment{itemize}{\small}
 
-%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
-%% You can always just use \marginpar{...} if you do
-%% not need to align the top of the contents to any
-%% \cvsection title in the "main" bar.
-\cvsection[page1sidebar]{Experience}
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Experience}
 $for(experiences)$
 \cvevent{$experiences.role$}{$experiences.company$}{$experiences.duration$}{$experiences.location$}
 \begin{itemize}
@@ -97,25 +120,29 @@ $endfor$
 \end{itemize}
 $endfor$
 
+$if(hobbies)$
+\cvsection{Hobbies}
+$for(hobbies)$
+\cvachievement{$hobbies.icon$}{$hobbies.title$}{$hobbies.description$}
+$endfor$
+$endif$
 
-
-\cvsection[page2sidebar]{So far Project Experience }
+$if(project)$
+\cvsection{Projects}
 $for(projects)$
 \cvachievement{$projects.icon$}{$projects.title$}{$projects.description$}
 \divider
 $endfor$
+$endif$
+
+\switchcolumn
+\input{page1sidebar}
+\pagebreak
+\input{page2sidebar}
 
 
+\end{paracol}
 
-
-
-\cvsection{Hobbies}
-$for(hobbies)$
-\cvachievement{$hobbies.icon$}{$hobbies.title$}{$hobbies.description$}
-\divider
-$endfor$
-
-\clearpage
 
 
 \end{document}
