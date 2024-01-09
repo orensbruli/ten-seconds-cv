@@ -115,12 +115,12 @@ language:
   - name: "English"
     level: 4
 tags:
-    - Hard-working
-    - Persuasive
-    - Team player
-    - Problem solver
-    - Self-motivated
-    - Fast learner
+  - Team player
+  - Problem solver
+  - Fast learner
+  - Hard-working
+  - Persuasive
+  - Self-motivated
 #achievements:
 #  - title: "Best Mobile App Developer"
 #    icon: "\\faTrophy"

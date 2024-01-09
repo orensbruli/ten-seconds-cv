@@ -5,8 +5,8 @@
 This template I use for my own resume/CV.
 
 ```shell
-docker  build -t latex-cv .
-docker run -v $(pwd):/latex_content latex-cv /bin/sh -c "make pdf"
+docker build -t latex-cv .
+docker run -v $(pwd):/latex_content latex-cv /bin/bash -c "make pdf"
 #docker run -v $(pwd):/latex_content --name latex-container latex-cv /bin/sh -c "make pdf"
 #docker cp latex-container:/latex_content/cv-piotr-kowalski.pdf output.pdf
 #docker remove /latex-container
