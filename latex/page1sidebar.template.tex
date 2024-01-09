@@ -1,35 +1,48 @@
 
+$if(content.life_quote)$
 \cvsection{Life Philosophy}
 \begin{quote}
 $content.life_quote$
 \end{quote}
+$endif$
+
+$if(education)$
 \cvsection{Education}
 $for(education)$
 \cvevent{$education.degree$}{$education.institution$}{$education.duration$}{$education.location$}
 $endfor$
+$endif$
 
-\cvsection{Technical Strength}
+$if(skills)$
+\cvsection{Hard Skills}
 $for(skills)$
 \cvskill{$skills.name$}{$skills.level$}
 % \divider
 $endfor$
+$endif$
 
+$if(tags)$
+\cvsection{Soft skills}
+$for(tags)$
+\cvtag{$tags$}
+$endfor$
+$endif$
+
+$if(achievements)$
 \cvsection{Most Proud of}
 $for(achievements)$
 \cvachievement{$achievements.icon$}{$achievements.title$}{$achievements.description$}
 \divider
 $endfor$
+$endif$
 
-\cvsection{Strengths}
-$for(tags)$
-\cvtag{$tags$}
-$endfor$
-
+$if(languages)$
 \cvsection{Languages}
 $for(language)$
 \cvskill{$language.name$}{$language.level$}
 % \divider
 $endfor$
+$endif$
 
 
 
