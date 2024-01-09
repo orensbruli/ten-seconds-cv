@@ -1,6 +1,10 @@
 name: LaTeX Build and Upload
 
-on: [push, pull_request]
+on: [push, workflow_dispatch]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:

@@ -1,0 +1,64 @@
+
+$if(content.life_quote)$
+\cvsection{Life Philosophy}
+\begin{quote}
+$content.life_quote$
+\end{quote}
+$endif$
+
+$if(education)$
+\cvsection{Education}
+$for(education)$
+\cvevent{$education.degree$}{$education.institution$}{$education.duration$}{$education.location$}
+$endfor$
+$endif$
+
+$if(references)$
+\cvsection{Referees}
+$for(references)$
+\cvref{$references.name$}{$references.email$}{$references.affiliation$}
+\divider
+$endfor$
+$endif$
+
+%\newpage
+
+$if(language)$
+\cvsection{Languages}
+$for(language)$
+\cvskill{$language.name$}{$language.level$}
+% \divider
+$endfor$
+$endif$
+
+$if(skills)$
+\cvsection{Hard Skills}
+$for(skills)$
+\cvskill{$skills.name$}{$skills.level$}
+% \divider
+$endfor$
+$endif$
+
+$if(tags)$
+\cvsection{Soft skills}
+$for(tags)$
+\cvtag{$tags$}
+$endfor$
+$endif$
+
+$if(achievements)$
+\cvsection{Most Proud of}
+$for(achievements)$
+\cvachievement{$achievements.icon$}{$achievements.title$}{$achievements.description$}
+\divider
+$endfor$
+$endif$
+
+%\cvsection{Apps. on Store}
+%\cvevent{Gold Guide of Dragon City Gems} {Dharmsinh Desai University}{} {}
+%\cvevent{Hetrix} {Dharmsinh Desai University}{}{}
+%\cvevent{Parity Game } {Gujarat Technical University}{} {}
+
+
+
+

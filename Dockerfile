@@ -23,6 +23,9 @@ RUN wget --output-document=/usr/local/bin/yq https://github.com/mikefarah/yq/rel
     chmod +x /usr/local/bin/yq && \
     yq --version
 
+RUN apt-get update && apt-get install -y \
+    fonts-roboto-slab
+
 # Set working directory
 WORKDIR /latex_content
 
