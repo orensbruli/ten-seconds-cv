@@ -37,7 +37,10 @@ jobs:
         run: docker run -v $(pwd):/latex_content --name latex-container latex-build /bin/sh -c "make pdf"
 
       - name: Copy PDF from Docker Container
-        run: docker cp latex-container:/latex_content/rendered.pdf output.pdf
+        run: docker cp latex-container:/latex_content/rendered.pdf output_uncompressed.pdf
+
+      - name: compress pdf
+        run: ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile=output.pdf output_uncompressed.pdf
 
       - name: Upload PDF as Artifact
         uses: actions/upload-artifact@v4
