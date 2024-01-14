@@ -165,5 +165,109 @@ color_scheme:
     color: "SlateGrey"
   - name: "body"
     color: "LightGrey"
-
+skills_details:
+  - name: Python
+    levels:
+      - grade: 4
+        period: 2022-01-08 to 2024-01-14
+      - grade: 3
+        period: 2021-08-01 to 2022-01-07
+      - grade: 4
+        period: 2021-09 to 2022-07
+      - grade: 3
+        period: 2021-01-01 to 2021-08
+      - grade: 4
+        period: 2020-02 to 2020-11
+      - grade: 3
+        period: 2019-12 to 2020-01
+      - grade: 4
+        period: 2018-12-21 to 2019-11
+      - grade: 3
+        period: 2016-03-01 to 2018-12-20
+      - grade: 2
+        period: 2015-07-29 to 2016-02-28
+  - name: Chef
+    levels:
+      - grade: 1 
+        period: 2022-01-08 to 2024-01-14
+  - name: Ansible
+    levels:
+      - grade: 2 
+        period: 2022-01-08 to 2024-01-14
+      - grade: 1 
+        period: 2021-09-01 to 2022-07-31
+  - name: Argo CD
+    levels:
+      - grade: 1 
+        period: 2022-01-08 to 2024-01-14
+  - name: C++
+    levels:
+      - grade: 5
+        period: 2020-12 to 2021-08
+      - grade: 4
+        period: 2020-02 to 2020-11
+      - grade: 3
+        period: 2019-12 to 2020-01
+      - grade: 4 
+        period: 2018-07 to 2019-11
+      - grade: 3 
+        period: 2016-03 to 2018-06
+      - grade: 4 
+        period: 2015-07 to 2016-02
+      - grade: 3 
+        period: 2011-12 to 2015-07
+      - grade: 4 
+        period: 2010-03 to 2011-12
+      - grade: 3 # Hesperia
+        period: 2008-02 to 2010-02
+      - grade: 1  # Previous to Hesperia
+        period: 2006-01 to 2010-02
+  - name: Qt
+    levels:
+      - grade: 5
+        period: 2020-12 to 2021-08
+      - grade: 4 
+        period: 2020-02-11 to 2020-11-30
+      - grade: 2 
+        period: 2018-12-21 to 2019-11-16
+      - grade: 1 
+        period: 2015-07-29 to 2016-02-28
+  - name: Flask (Microservices)
+    levels:
+      - grade: 1 
+        period: 2018-07-03 to 2018-12-20
+  - name: NGINX
+    levels:
+      - grade: 2 
+        period: 2018-07-03 to 2018-12-20
+  - name: SQLAlchemy
+    levels:
+      - grade: 3 
+        period: 2015-07-29 to 2016-02-28
+  - name: Php
+    levels:
+      - grade: 3
+        period: 2006-07 to 2008-12
+  - name: MySql
+    levels:
+      - grade: 3
+        period: 2008-01 to 2008-12
+      - grade: 2
+        period: 2006-07 to 2007-12
+  - name: Shell script
+    levels:
+      - grade: 5
+        period: 2008-12 to current
+      - grade: 4
+        period: 2008-12 to 2009-12
+      - grade: 3
+        period: 2008-12 to 2009-12
+      - grade: 2
+        period: 2006-07 to 2008-12
+      - grade: 1
+        period: 2006-07 to 2007-12
+  - name: Perl
+    levels:
+      - grade: 
+        period: 2006-07-01 to 2008-12-31
 ---
