@@ -44,6 +44,7 @@ jobs:
         with:
           name: compiled-pdf
           path: output.pdf
+
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         if: ${{ contains(github.ref, 'tags') }}
@@ -54,3 +55,12 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "Latest version of my CV."
+
+      # TODO: Attach pdf to readme.md using sed and the latest release
+      # -name: Attach pdf to readme.md
+      #   run: |
+        #     echo "![CV](
+        #
+        #     )"
+        #     >> README.md
+
