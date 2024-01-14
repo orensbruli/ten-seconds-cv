@@ -112,11 +112,8 @@ $endfor$
 \cvsection{Experience}
 $for(experiences)$
 \cvevent{$experiences.role$}{$experiences.company$}{$experiences.duration$}{$experiences.location$}
-\begin{itemize}
-$for(experiences.responsibilities)$
-  \item $experiences.responsibilities$
-$endfor$
-\end{itemize}
+{$experiences.responsibilities$}
+
 \divider
 $endfor$
 
