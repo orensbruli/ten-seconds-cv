@@ -1,30 +1,10 @@
-import yaml
+import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontManager
+import numpy as np
 import pandas as pd
 import seaborn as sns
-import matplotlib.pyplot as plt
-import numpy as np
+import yaml
 
-
-# YAML data to be used as example
-yaml_data_string = """
-skills_details:
-  - name: Python
-    levels:
-      - grade: 1
-        period: 2020-01-01 to 2020-12-31
-      - grade: 2
-        period: 2021-01-01 to 2021-12-31
-      - grade: 3
-        period: 2022-01-01 to 2024-01-14
-  - name: Docker
-    levels:
-      - grade: 1
-        period: 2019-01-01 to 2019-12-31
-      - grade: 2
-        period: 2020-01-01 to 2024-01-14
-"""
-
-from matplotlib.font_manager import FontManager
 
 
 def print_available_fonts():
@@ -36,12 +16,11 @@ def print_available_fonts():
         print(fuente)
 
 
-print_available_fonts()
-
 # Load the YAML data from a string
 def load_yaml_data(yaml_data_string):
     yaml_data = yaml.load(yaml_data_string, Loader=yaml.FullLoader)
     return yaml_data
+
 
 def load_yaml_data_from_file(yaml_file):
     with open(yaml_file) as file:
@@ -52,6 +31,7 @@ def load_yaml_data_from_file(yaml_file):
         if 'skills_details' not in yaml_data:
             raise Exception('Invalid YAML file. Missing skills section')
     return yaml_data
+
 
 def configure_labels(ax):
     # Obtener las etiquetas actuales del eje x
@@ -110,34 +90,62 @@ def yaml_to_dataframe(yaml_data):
                 'skill': skill['name'],
                 'level': level['grade']
             })
-    df = pd.DataFrame(data)
+    # Create a dataframe from the data keeping the order of the columns entries
+    df = pd.DataFrame(data, columns=['skill', 'period', 'level'])
     return df
+
+
+def sum_of_skills(df):
+    # Sum the level of each skill for each period
+    df_grouped = df.groupby([df['period'].dt.to_period('Q')])['level'].sum()
+    df_grouped = df_grouped.reset_index()
+    # Convert the period to a datetime object
+    df_grouped['period'] = df_grouped['period'].dt.to_timestamp()
+    return df_grouped
+
 
 def main():
     yaml_data = load_yaml_data_from_file('data.md')
     df = yaml_to_dataframe(yaml_data)
+    original_skill_order = df['skill'].unique()
     df = format_periods(df)
     df_grouped = group_periods(df)
-    # Preparamos los datos para el mapa de calor
+    # Preparamos los datos para el mapa de calor mantiendo el orden las filas y columnas
     heatmap_data = pd.pivot_table(df_grouped, values='level', index='skill', columns='period', aggfunc=np.mean)
     heatmap_data.columns = heatmap_data.columns.to_series().dt.strftime('%Y-%m')
     heatmap_data = heatmap_data.fillna(0)
+    # sort by the sum of the skills
+    # heatmap_data = heatmap_data.reindex(heatmap_data.sum().sort_values(ascending=False).index)
+    heatmap_data = heatmap_data.reindex(original_skill_order)
+    #
     # Ajustamos el tamaño del gráfico
-    plt.figure(figsize=(20, 6))
+    fig, ax = plt.subplots(figsize=(20, 4))
     # cmap = sns.light_palette("darkgreen", as_cmap=True)
     # Crear el mapa de calor
     custom_colors = sns.color_palette("YlGn", as_cmap=True)
     # add blue at the beginning to show the lowest values
     custom_colors = sns.color_palette(["#ECECEC"] + list(sns.color_palette("YlGn", 10).as_hex()), as_cmap=True)
 
-    ax = sns.heatmap(heatmap_data, annot=False, cmap=custom_colors, linewidths=1, square=True)
+    sns.heatmap(heatmap_data, annot=False, cmap=custom_colors, linewidths=1, square=True, ax=ax)
     ax = configure_labels(ax)
     ax.set_title('Level of skill', loc='center', pad=24,
                  fontdict={'fontsize': 16, 'fontweight': 'bold', 'fontfamily': 'Liberation Mono'})
 
-    # Mover la leyenda (barra de colores) a la parte inferior
-    # cbar = plt.colorbar(ax.collections[0], ax=ax, location='bottom', shrink=0.5)
-    plt.show()
+    ax.yaxis.tick_right()
+
+    # Encuentra la barra de colores actual en el gráfico, si existe
+    cbar = ax.collections[0].colorbar
+
+    # Si existe la barra de colores, ajusta su posición
+    if cbar:
+        cbar.remove()  # Primero, removemos la barra de colores existente
+        cbar = fig.colorbar(ax.collections[0], ax=ax, location='left', shrink=0.65, pad=0.04, fraction=0.01)
+
+    plt.subplots_adjust(left=0.02, right=0.92, top=0.999, bottom=0.001)
+
+    #save the figure
+    plt.savefig('heatmap.png', dpi=300, bbox_inches='tight', transparent=True)
+
 
 if __name__ == '__main__':
     main()
