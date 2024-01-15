@@ -166,6 +166,18 @@ color_scheme:
   - name: "body"
     color: "LightGrey"
 skills_details:
+  - name: Shell script
+    levels:
+      - grade: 5
+        period: 2008-12 to current
+      - grade: 4
+        period: 2008-12 to 2009-12
+      - grade: 3
+        period: 2008-12 to 2009-12
+      - grade: 2
+        period: 2006-07 to 2008-12
+      - grade: 1
+        period: 2006-07 to 2007-12
   - name: Python
     levels:
       - grade: 4
@@ -186,22 +198,10 @@ skills_details:
         period: 2016-03-01 to 2018-12-20
       - grade: 2
         period: 2015-07-29 to 2016-02-28
-  - name: Chef
-    levels:
-      - grade: 1 
-        period: 2022-01-08 to 2024-01-14
-  - name: Ansible
-    levels:
-      - grade: 2 
-        period: 2022-01-08 to 2024-01-14
-      - grade: 1 
-        period: 2021-09-01 to 2022-07-31
-  - name: Argo CD
-    levels:
-      - grade: 1 
-        period: 2022-01-08 to 2024-01-14
   - name: C++
     levels:
+      - grade: 3
+        period: 2021-08 to current
       - grade: 5
         period: 2020-12 to 2021-08
       - grade: 4
@@ -222,52 +222,106 @@ skills_details:
         period: 2008-02 to 2010-02
       - grade: 1  # Previous to Hesperia
         period: 2006-01 to 2010-02
+  - name: Docker
+    levels:
+      - grade: 5 # Open Robotics
+        period: 2022-08 to current
+      - grade: 1
+        period: 2022-07 to 2022-07
+      - grade: 3 # Robotica UEX
+        period: 2021-09 to 2022-07
+      - grade: 1
+        period: 2021-08 to 2021-08
+      - grade: 4
+        period: 2020-02 to 2021-08
+      - grade: 1
+        period: 2020-01 to 2020-01
+      - grade: 4
+        period: 2019-12 to 2020-01
+      - grade: 1
+        period: 2019-11 to 2019-11
+      - grade: 3
+        period: 2018-07 to 2019-11
+      - grade: 1
+        period: 2018-06 to 2018-06
+      - grade: 1
+        period: 2018-01 to 2018-06
   - name: Qt
     levels:
+      - grade: 3
+        period: 2021-09 to current
+      - grade: 3
+        period: 2021-08-01 to 2021-08-31
       - grade: 5
         period: 2020-12 to 2021-08
+      - grade: 4
+        period: 2020-12-01 to 2020-12-10
       - grade: 4 
         period: 2020-02-11 to 2020-11-30
+      - grade: 1
+        period: 2019-11-17 to 2020-02-10
       - grade: 2 
         period: 2018-12-21 to 2019-11-16
+      - grade: 1
+        period: 2016-03-01 to 2018-12-20
       - grade: 1 
         period: 2015-07-29 to 2016-02-28
-  - name: Flask (Microservices)
+  - name: Unit Testing
     levels:
+      - grade: 3
+        period: 2022-01-08 to 2024-01-14
+      - grade: 5
+        period: 2021-08-01 to 2022-01-07
+      - grade: 4
+        period: 2021-09 to 2022-07
+      - grade: 3
+        period: 2021-01-01 to 2021-08
+      - grade: 3
+        period: 2020-02 to 2020-11
+      - grade: 1
+        period: 2019-05 to 2020-01
+  - name: Github Actions
+    levels:
+      - grade: 5 
+        period: 2022-08 to current
+      - grade: 3 
+        period: 2021-09 to 2022-07
+      - grade: 4 
+        period: 2020-12 to 2021-08
       - grade: 1 
-        period: 2018-07-03 to 2018-12-20
-  - name: NGINX
+        period: 2018-12 to 2020-11
+  - name: Gitlab CI/CD
+    levels:
+      - grade: 4 
+        period: 2022-12 to current
+      - grade: 2 
+        period: 2021-09 to 2022-11
+  - name: Ansible
     levels:
       - grade: 2 
-        period: 2018-07-03 to 2018-12-20
-  - name: SQLAlchemy
-    levels:
-      - grade: 3 
-        period: 2015-07-29 to 2016-02-28
-  - name: Php
-    levels:
-      - grade: 3
-        period: 2006-07 to 2008-12
-  - name: MySql
-    levels:
-      - grade: 3
-        period: 2008-01 to 2008-12
-      - grade: 2
-        period: 2006-07 to 2007-12
-  - name: Shell script
-    levels:
-      - grade: 5
-        period: 2008-12 to current
-      - grade: 4
-        period: 2008-12 to 2009-12
-      - grade: 3
-        period: 2008-12 to 2009-12
-      - grade: 2
-        period: 2006-07 to 2008-12
-      - grade: 1
-        period: 2006-07 to 2007-12
-  - name: Perl
-    levels:
-      - grade: 
-        period: 2006-07-01 to 2008-12-31
+        period: 2022-01-08 to 2024-01-14
+      - grade: 1 
+        period: 2021-09-01 to 2022-07-31
+#  - name: Argo CD
+#    levels:
+#      - grade: 1 
+#        period: 2022-01-08 to 2024-01-14
+#  - name: NGINX
+#    levels:
+#      - grade: 2 
+#        period: 2018-07-03 to 2018-12-20
+#  - name: SQLAlchemy
+#    levels:
+#      - grade: 3 
+#        period: 2015-07-29 to 2016-02-28
+#  - name: PHP
+#    levels:
+#      - grade: 3
+#        period: 2006-07 to 2008-12
+#  - name: MySql
+#    levels:
+#      - grade: 3
+#        period: 2008-01 to 2008-12
+#      - grade: 2
+#        period: 2006-07 to 2007-12
 ---
