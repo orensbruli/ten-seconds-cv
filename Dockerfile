@@ -27,7 +27,12 @@ RUN apt-get update && apt-get install -y \
     fonts-roboto-slab
 
 RUN apt-get update && apt-get install -y \
-    ghostscript
+    ghostscript \
+    python3 \
+    python3-pip
+
+# bind mount requirements.txt and install python dependencies
+RUN --mount=type=bind,target=/latex_content pip3 install -r /latex_content/requirements.txt
 
 # Set working directory
 WORKDIR /latex_content
