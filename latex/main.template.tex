@@ -23,6 +23,7 @@
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
+\usepackage{adjustbox}
 
 
 % Change the font if you want to, depending on whether
@@ -134,9 +135,20 @@ $for(projects)$
 $endfor$
 $endif$
 
+
+
 \switchcolumn
 \input{sidebar}
 \end{paracol}
 
+  % Add heatmap.png image full width
+\begin{figure}
+  \centering
+  \begin{adjustbox}{width=1.1\textwidth,center}
+    \includegraphics{heatmap.png}
+  \end{adjustbox}
+  \caption{Tu descripción de la imagen}
+  \label{fig:heatmap}
+\end{figure}
 
 \end{document}
