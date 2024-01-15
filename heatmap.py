@@ -46,8 +46,8 @@ def configure_labels(ax):
     # Rotar las etiquetas para mejor visualización
     plt.xticks(rotation=90)
     # Ajustes de visualización
-    plt.xlabel('Date', fontdict={'fontsize': 16, 'fontfamily': 'Liberation Mono', 'fontweight': 'bold'})
-    plt.ylabel('Skill', fontdict={'fontsize': 16, 'fontfamily': 'Liberation Mono', 'fontweight': 'bold'})
+    plt.xlabel('Date', fontdict={'fontsize': 16, 'fontfamily': 'Roboto Slab', 'fontweight': 'bold'})
+    plt.ylabel('Skill', fontdict={'fontsize': 16, 'fontfamily': 'Roboto Slab', 'fontweight': 'bold'})
     return ax
 
 
@@ -129,7 +129,7 @@ def main():
     sns.heatmap(heatmap_data, annot=False, cmap=custom_colors, linewidths=1, square=True, ax=ax)
     ax = configure_labels(ax)
     ax.set_title('Level of skill', loc='center', pad=24,
-                 fontdict={'fontsize': 16, 'fontweight': 'bold', 'fontfamily': 'Liberation Mono'})
+                 fontdict={'fontsize': 16, 'fontweight': 'bold', 'fontfamily': 'Roboto Slab'})
 
     ax.yaxis.tick_right()
 
@@ -144,7 +144,7 @@ def main():
     plt.subplots_adjust(left=0.02, right=0.92, top=0.999, bottom=0.001)
 
     #save the figure
-    plt.savefig('heatmap.png', dpi=300, bbox_inches='tight', transparent=True)
+    fig.savefig('heatmap.eps', format='eps')
 
 
 if __name__ == '__main__':

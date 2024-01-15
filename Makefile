@@ -16,7 +16,7 @@ pdf:
 
 	python3 heatmap.py
 
-	mv heatmap.png build/pdf/
+	mv heatmap.eps build/pdf/
 
 	cd build/pdf/; \
 	pandoc data.md --pdf-engine xelatex --template sidebar.template.tex -o sidebar.tex ; \
