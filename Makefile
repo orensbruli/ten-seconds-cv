@@ -14,6 +14,10 @@ pdf:
 	cp data.md build/pdf/
 	wget --output-document=build/pdf/img.jpg $$(yq e '.image' data.md | grep https)
 
+	python3 heatmap.py
+
+	mv heatmap.eps build/pdf/
+
 	cd build/pdf/; \
 	pandoc data.md --pdf-engine xelatex --template sidebar.template.tex -o sidebar.tex ; \
 	pandoc data.md --pdf-engine xelatex --template $(TEX_TEMPLATE) -o $(TEX) ; \

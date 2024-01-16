@@ -23,6 +23,7 @@
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
+\usepackage{adjustbox}
 
 
 % Change the font if you want to, depending on whether
@@ -134,9 +135,13 @@ $for(projects)$
 $endfor$
 $endif$
 
+
+
 \switchcolumn
 \input{sidebar}
 \end{paracol}
+
+\centering\includegraphics[width=1.06\linewidth]{heatmap.eps}
 
 
 \end{document}
