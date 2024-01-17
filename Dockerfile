@@ -1,21 +1,16 @@
-# Use an official Ubuntu base image
+# Use a smaller base image if possible
 FROM ubuntu:22.04
 
 # Avoid prompts from apt
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install LaTeX packages and other dependencies in one RUN command to minimize layers
+# Clean up the apt cache in the same layer to reduce image size
 RUN apt-get update && apt-get install -y \
     make \
     pandoc \
-    texlive \
-    texlive-bibtex-extra \
-    texlive-fonts-extra \
-    texlive-latex-base \
-    texlive-latex-extra \
-    texlive-luatex \
-    texlive-pstricks \
     texlive-xetex \
+    texlive-fonts-extra \
     wget \
     fonts-roboto-slab \
     ghostscript \
@@ -35,7 +30,6 @@ RUN --mount=type=bind,target=/latex_content pip3 install -r /latex_content/requi
 # Set working directory
 WORKDIR /latex_content
 
-# Note: For Font Awesome support, compile with LuaLaTeX instead of XeLaTeX
 # Default command to compile the LaTeX document using XeLaTeX
 # This command can be overridden when running the container
 CMD ["make", "pdf"]
