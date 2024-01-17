@@ -276,3 +276,7 @@ TSWLatexianTemp*
 *.lpz
 
 build/
+
+*.pdf
+
+*.eps
