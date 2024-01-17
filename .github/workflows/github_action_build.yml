@@ -25,16 +25,12 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build Docker Image
-        run: |
-          docker buildx build \
-            --load \
-            --cache-from=type=local,src=/tmp/.buildx-cache \
-            --cache-to=type=local,dest=/tmp/.buildx-cache \
-            -t latex-build .
+      # This step is replaced by pulling the image from GHCR
+      - name: Pull Docker Image from GHCR
+        run: docker pull ghcr.io/${{ github.repository_owner }}/latex-build:latest
 
       - name: Run Docker Container
-        run: docker run -v $(pwd):/latex_content --name latex-container latex-build /bin/sh -c "make pdf"
+        run: docker run -v $(pwd):/latex_content --name latex-container ghcr.io/${{ github.repository_owner }}/latex-build:latest /bin/sh -c "make pdf"
 
       - name: Copy PDF from Docker Container
         run: docker cp latex-container:/latex_content/rendered.pdf output.pdf
