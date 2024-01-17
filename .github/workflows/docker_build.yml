@@ -5,6 +5,7 @@ on:
     paths:
       - 'Dockerfile'
       - 'requirements.txt'
+  workflow_dispatch:
 
 jobs:
   build-and-push:
