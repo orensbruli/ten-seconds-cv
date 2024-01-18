@@ -32,7 +32,7 @@ jobs:
       - name: Upload PDF as Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: compiled-pdf-${{ github.ref_slug }}
+          name: generated-pdf-${{ github.ref_slug }}
           path: esteban_martinena_cv.*
 
       - name: Upload binaries to release
