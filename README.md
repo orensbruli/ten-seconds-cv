@@ -4,6 +4,12 @@ Hi!
 My name is Esteban Martinena, a Software Engineer from Spain. 
 This is my resume, built with LaTeX, Pandoc, Docker...
 
+<object data="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/esteban_martinena_cv.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/esteban_martinena_cv.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/esteban_martinena_cv.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
 ## Why?
 As many other developers, I really hate to write or update my resume.
 I've tried many different approaches, but I've never been satisfied with the result.
