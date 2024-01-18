@@ -54,7 +54,8 @@ After building the PDF file, it's uploaded as an artifact, so it can be download
 On release, the PDF file is also uploaded as a release asset.
 
 ## How to build the PDF file locally?
-
+The main dependency for building the PDF file is Docker.
+All the other dependencies are installed in the Docker image.
 Clone this repository and run the following command in the root directory of the repository:
 ```shell
 docker build -t latex-cv .
@@ -73,4 +74,3 @@ docker run -v $(pwd):/latex_content latex-cv /bin/bash -c "make pdf"
 The initial idea for this repo came from the following repositories:
 1. [Ten Seconds CV](https://github.com/bitroniq/ten-seconds-cv)
 2. [Carmine Spagnuolo's Twenty Seconds Curriculum Vitae](https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex)
-3. [Harsh Gadgil opensorcer/Data-Engineer-Resume-LaTeX](https://github.com/opensorceror/Data-Engineer-Resume-LaTeX)
