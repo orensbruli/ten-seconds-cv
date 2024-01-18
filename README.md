@@ -5,7 +5,9 @@ My name is Esteban Martinena, a Software Engineer from Spain.
 This is my resume, built with LaTeX, Pandoc, Docker...
 
 <p align="center">
-  <img width="460" src="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/esteban_martinena_cv.png">
+    <a href="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/esteban_martinena_cv.pdf">
+        <img width="460" src="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/esteban_martinena_cv.png">
+    </a>
 </p>
 
 ## Why?
