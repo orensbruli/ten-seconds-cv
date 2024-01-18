@@ -4,6 +4,7 @@ FILE0   = main
 TEX_TEMPLATE = $(FILE0).template.tex
 TEX     = $(FILE0).raw.tex
 PDF     = $(FILE0).pdf
+COVER   = cover.png
 RAW_PDF = $(FILE0).raw.pdf
 
 all: pdf
@@ -24,7 +25,9 @@ pdf:
 	xelatex -shell-escape -output-driver="xdvipdfmx -z 0" $(TEX) ; \
     echo "Compresing PDF..."; \
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile=$(PDF) $(RAW_PDF)
+    gs -sDEVICE=pngalpha -sOutputFile=cover.png -r144 $(RAW_PDF)
 	cp build/pdf/$(PDF) ./rendered.pdf
+	cp build/pdf/$(COVER) ./cover.png
 
 clean-pdf:
 	rm -rf build/pdf/
