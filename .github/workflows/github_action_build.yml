@@ -25,21 +25,23 @@ jobs:
         run: docker run -v $(pwd):/latex_content --name latex-container ghcr.io/${{ github.repository_owner }}/latex-build:latest /bin/sh -c "make pdf"
 
       - name: Copy PDF from Docker Container
-        run: docker cp latex-container:/latex_content/rendered.pdf output.pdf
+        run: |
+          docker cp latex-container:/latex_content/rendered.pdf esteban_martinena_cv.pdf
+          docker cp latex-container:/latex_content/cover.png esteban_martinena_cv.png
 
       - name: Upload PDF as Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: compiled-pdf-${{ github.ref_slug }}
-          path: output.pdf
+          name: generated-pdf-${{ github.ref_slug }}
+          path: esteban_martinena_cv.*
 
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         if: ${{ contains(github.ref, 'tags') }}
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: output.pdf
-          asset_name: esteban_martinena_cv.pdf
+          file: "esteban_martinena_cv*"
+          file_glob: true
           tag: ${{ github.ref }}
           overwrite: true
           body: "Latest version of my CV."
