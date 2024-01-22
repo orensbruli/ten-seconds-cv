@@ -24,6 +24,7 @@
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
 \usepackage{adjustbox}
+\usepackage{pdflscape}
 
 
 % Change the font if you want to, depending on whether
@@ -141,7 +142,10 @@ $endif$
 \input{sidebar}
 \end{paracol}
 
-\centering\includegraphics[width=1.06\linewidth]{heatmap.eps}
+\begin{landscape}
+\centering\includegraphics[width=\linewidth]{heatmap.eps}
+\end{landscape}
+
 
 
 \end{document}
