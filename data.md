@@ -319,16 +319,16 @@ skills_details:
         period: 2022-01-08 to 2024-03-15
       - grade: 1 
         period: 2021-09-01 to 2022-07-31
-   - name: Terraform
-     levels:
+  - name: Terraform
+    levels:
       - grade: 2 
         period: 2024-03-15 to current
-   - name: Debian repositories
-     levels:
+  - name: Debian repositories
+    levels:
       - grade: 3 
         period: 2024-03-15 to current
-   - name: AWS
-     levels:
+  - name: AWS
+    levels:
       - grade: 2 
         period: 2024-03-15 to current
 #  - name: Argo CD
