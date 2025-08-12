@@ -22,9 +22,16 @@ education:
     duration: "06/2001 - 07/2007"
     location: "Cáceres, Spain"
 experiences:
+  - role: "Senior DevOps"
+    company: "Greenzie (Contractor)"
+    duration: "15/03/2024 - current"
+    location: "Atlanta, Georgia, USA (Remote)"
+    responsibilities: |
+      Complete workflow to build, test, \
+      and deploy software to mowers around USA.
   - role: "DevOps"
     company: "Picknik (Contractor)"
-    duration: "14/02/2023 - current"
+    duration: "14/02/2023 - 14/03/2024"
     location: "Boulder, Colorado, USA (Remote)"
     responsibilities: |
       DevOps for Moveit Studio. \
