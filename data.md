@@ -187,6 +187,8 @@ skills_details:
         period: 2006-07 to 2007-12
   - name: Python
     levels:
+      - grade: 5
+        period: 2024-01-14 to current
       - grade: 4
         period: 2022-01-08 to 2024-01-14
       - grade: 3
@@ -207,8 +209,10 @@ skills_details:
         period: 2015-07-29 to 2016-02-28
   - name: C++
     levels:
+      - grade: 2
+        period: 2024-03 to current
       - grade: 3
-        period: 2021-08 to current
+        period: 2021-08 to 2024-03
       - grade: 5
         period: 2020-12 to 2021-08
       - grade: 4
@@ -290,7 +294,7 @@ skills_details:
   - name: Github Actions
     levels:
       - grade: 5 
-        period: 2022-08 to current
+        period: 2022-08 to 2024-03-15
       - grade: 3 
         period: 2021-09 to 2022-07
       - grade: 4 
@@ -303,12 +307,30 @@ skills_details:
         period: 2022-12 to current
       - grade: 2 
         period: 2021-09 to 2022-11
-  - name: Ansible
+  - name: CircleCI
     levels:
       - grade: 2 
-        period: 2022-01-08 to 2024-01-14
+        period: 2024-03-15 to current
+  - name: Ansible
+    levels:
+      - grade: 3 
+        period: 2024-03-15 to current
+      - grade: 2 
+        period: 2022-01-08 to 2024-03-15
       - grade: 1 
         period: 2021-09-01 to 2022-07-31
+   - name: Terraform
+     levels:
+      - grade: 2 
+        period: 2024-03-15 to current
+   - name: Debian repositories
+     levels:
+      - grade: 3 
+        period: 2024-03-15 to current
+   - name: AWS
+     levels:
+      - grade: 2 
+        period: 2024-03-15 to current
 #  - name: Argo CD
 #    levels:
 #      - grade: 1 
