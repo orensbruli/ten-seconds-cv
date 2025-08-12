@@ -69,10 +69,10 @@ experiences:
   - role: "Software Architect  - Developer"
     duration: "29/07/2015 - 16/11/2019"
     company: "Robotics and Computer Vision Lab (UEX)"
-    responsibilities: |
-      \textbf{Project}: Promotion of Aging in the EUROACE region. Design and development of applications and Serious Games. \
-      \textbf{Project}: Social Immotics for Efficient Use of Public Buildings. Development of applications for sensor management and control of home automation systems. \
-      \textbf{Project}: CELIS Project. Development and maintenance of a management and visualization application for satellite systems. \
+#    responsibilities: |
+#      \textbf{Project}: Promotion of Aging in the EUROACE region. Design and development of applications and Serious Games. \
+#      \textbf{Project}: Social Immotics for Efficient Use of Public Buildings. Development of applications for sensor management and control of home automation systems. \
+#      \textbf{Project}: CELIS Project. Development and maintenance of a management and visualization application for satellite systems. \
     
 
 #projects:
