@@ -1,0 +1,145 @@
+\documentclass[10pt]{article}
+
+\usepackage[letterpaper,margin=0.72in,top=0.48in,bottom=0.62in]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{dashrule}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{pdflscape}
+\usepackage{iftex}
+
+\ifPDFTeX
+\usepackage{charter}
+\else
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Schola}
+\fi
+
+\definecolor{navy}{HTML}{253654}
+\definecolor{graytext}{HTML}{555555}
+\definecolor{lightgray}{HTML}{8C8C8C}
+
+\AddToShipoutPictureBG*{%
+  \AtPageUpperLeft{%
+    \color{navy}\rule[-8pt]{\paperwidth}{8pt}%
+  }%
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+
+\newcommand{\spacedcaps}[1]{{\color{lightgray}\fontsize{11}{13}\selectfont\bfseries\MakeUppercase{#1}}}
+\newlength{\sectiontitlewidth}
+\newlength{\sectionrulewidth}
+\newcommand{\sectiontitle}[1]{%
+  \settowidth{\sectiontitlewidth}{\spacedcaps{#1}}%
+  \setlength{\sectionrulewidth}{\dimexpr(\linewidth-\sectiontitlewidth-1.2em)/2\relax}%
+  \vspace{15pt}%
+  \noindent\makebox[\linewidth]{%
+    {\color{lightgray}\hdashrule[0.45ex]{\sectionrulewidth}{0.45pt}{2.1pt 1.6pt}}%
+    \hspace{0.6em}\spacedcaps{#1}\hspace{0.6em}%
+    {\color{lightgray}\hdashrule[0.45ex]{\sectionrulewidth}{0.45pt}{2.1pt 1.6pt}}%
+  }%
+  \vspace{8pt}%
+}
+
+\newcommand{\role}[4]{%
+  \textbf{#1}, #2 \textbar{} #3\hfill #4\par%
+}
+
+\newcommand{\experiencebullets}[1]{%
+  \begin{itemize}[leftmargin=0.32in,itemsep=3pt,topsep=6pt,parsep=0pt]#1\end{itemize}%
+}
+
+\begin{document}
+
+\vspace*{-5pt}
+
+\begin{center}
+  {\color{navy}\fontsize{33}{38}\selectfont $personal_info.name$}\par
+  \vspace{12pt}
+  {\color{graytext}\fontsize{10}{12}\selectfont\bfseries
+  $if(personal_info.job_title)$P R O F E S S I O N A L\quad T I T L E\quad \textbullet\quad $personal_info.job_title$$else$P R O F E S S I O N A L\quad T I T L E$endif$}\par
+  \vspace{9pt}
+  {\color{graytext}\fontsize{8}{10}\selectfont
+  $for(personal_info.phone)$$personal_info.phone$$sep$ \textbar{} $endfor$ \textbar{} $personal_info.email$ \textbar{} $personal_info.location$ \textbar{} linkedin.com/in/$personal_info.linkedin$}
+\end{center}
+
+$if(summary)$
+\sectiontitle{Professional Summary}
+
+{\small
+$summary$
+}
+$elseif(content.life_quote)$
+\sectiontitle{Professional Summary}
+
+{\small
+$content.life_quote$
+}
+$endif$
+
+\sectiontitle{Areas of Expertise}
+
+{\small
+$if(expertise_groups)$
+\begin{tabular}{>{\bfseries}p{1.42in}p{5.4in}}
+$for(expertise_groups)$
+$expertise_groups.label$ & $for(expertise_groups.items)$$expertise_groups.items$$sep$ \textbar{} $endfor$ \\
+$endfor$
+\end{tabular}
+$else$
+\begin{tabular}{>{\bfseries}p{1.42in}p{5.4in}}
+$if(skills)$
+TECHNICAL SKILLS & $for(skills)$$skills.name$$sep$ \textbar{} $endfor$ \\
+$endif$
+$if(tags)$
+PROFESSIONAL SKILLS & $for(tags)$$tags$$sep$ \textbar{} $endfor$ \\
+$endif$
+$if(language)$
+LANGUAGES & $for(language)$$language.name$$sep$ \textbar{} $endfor$ \\
+$endif$
+\end{tabular}
+$endif$
+}
+
+\sectiontitle{Professional Experience}
+
+{\small
+$if(featured_experiences)$
+$for(featured_experiences)$
+\role{$featured_experiences.title$}{$featured_experiences.company$}{$featured_experiences.location$}{$featured_experiences.dates$}
+\textit{$featured_experiences.context$}
+\experiencebullets{
+$for(featured_experiences.bullets)$
+  \item \textbf{$featured_experiences.bullets.lead$:} $featured_experiences.bullets.text$
+$endfor$
+}
+
+\vspace{8pt}
+
+$endfor$
+$else$
+$for(experiences)$
+\role{$experiences.role$}{$experiences.company$}{$experiences.location$}{$experiences.duration$}
+\textit{$experiences.responsibilities$}
+
+\vspace{8pt}
+
+$endfor$
+$endif$
+}
+
+\sectiontitle{Education}
+
+{\small
+$for(education)$
+\textbf{$education.degree$}, $education.institution$, \textit{$education.location$}\hfill $education.duration$\par
+$endfor$
+}
+
+\end{document}

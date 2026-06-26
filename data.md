@@ -96,6 +96,111 @@ references:
   - name: "Matthew Festo / General Manager"
     email: "matthew@operobotics.org"
     affiliation: "Open Robotics"
+summary: >
+  Senior DevOps engineer focused on CI/CD, OTA deployment to physical devices,
+  robotics software delivery, and platform automation. Served as the solo
+  DevOps engineer in the last two companies, supporting software delivery to
+  300+ mowers, improving developer workflow efficiency by 30%, reducing support
+  time to fix by 40% through active monitoring and alerts, and cutting build
+  times by 60% through caching and build optimization.
+expertise_groups:
+  - label: "Professional Skills"
+    items:
+      - CI/CD Strategy
+      - OTA Device Deployment
+      - Developer Enablement
+      - Platform Automation
+      - Ownership and Cross-Functional collaboration
+  - label: "Technical Skills"
+    items:
+      - Multi-platform CI/CD
+      - Ros 2
+      - Terraform
+      - AWS Cloud Services
+      - Docker
+      - Ansible
+      - Python
+      - C++
+  - label: "Languages"
+    items:
+      - Spanish
+      - English
+featured_experiences:
+  - title: "Senior DevOps"
+    company: "Greenzie"
+    location: "Atlanta, Georgia, USA (Remote)"
+    dates: "Mar. 2024 - Present"
+    context: >
+      Solo DevOps engineer responsible for the workflows used to build,
+      validate, package, and deploy software over the air to autonomous mower
+      fleets operating across the United States.
+    bullets:
+      - lead: "Build Performance"
+        text: "Reduced build times by 60% through caching and build optimization across the software delivery pipeline."
+      - lead: "Fleet Deployment"
+        text: "Improved and maintained the end to end workflow used to deliver over the air software updates to 300+ production mowers."
+      - lead: "Deployment Safety"
+        text: "Created the first canary and hardware in the loop validation workflow, achieving zero rollbacks over two years across 300+ production mowers."
+      - lead: "Monitoring and Support"
+        text: "Reduced support time to fix by 40% by adding active monitoring, clearer alerts, and faster operational feedback loops."
+      - lead: "Developer Efficiency"
+        text: "Automated +40% of the development-to-release pipeline, reducing manual overhead and accelerating deployment cadence."
+  - title: "DevOps"
+    company: "PickNik"
+    location: "Boulder, Colorado, USA (Remote)"
+    dates: "Feb. 2023 - Mar. 2024"
+    context: >
+      Solo DevOps engineer supporting MoveIt Studio and customer facing robotics
+      programs with a focus on reliable automation, repeatable releases, and
+      developer productivity.
+    bullets:
+      - lead: "CI/CD"
+        text: "Implemented and maintained automation workflows used to build, test, and release software across multiple environments."
+      - lead: "Customer Delivery"
+        text: "Supported containerized delivery processes for MoveIt Pro where reliability and traceability were critical."
+      - lead: "Infrastructure"
+        text: "Improved tooling and operational practices used by engineering teams working on robotics software products."
+  - title: "DevOps"
+    company: "Open Robotics"
+    location: "Singapore (Remote)"
+    dates: "Aug. 2022 - Dec. 2022"
+    context: >
+      Worked on DevOps and infrastructure efforts for robotics middleware and
+      the broader ROS ecosystem, supporting reliability and maintainability
+      across shared engineering systems.
+    bullets:
+      - lead: "Middleware Infrastructure"
+        text: "Contributed DevOps support for the Robotics Middleware Framework and related delivery workflows."
+      - lead: "ROS Ecosystem"
+        text: "Supported infrastructure used by the Open Robotics ROS team for shared services and engineering operations."
+      - lead: "Reliability"
+        text: "Improved repeatability and operational stability across tooling and infrastructure components."
+  - title: "Python Dev / DevOps"
+    company: "Univention (Contractor)"
+    location: "Bremen, Germany (Remote)"
+    dates: "Sep. 2021 - Jul. 2022"
+    context: >
+      Python developer and DevOps contributor for Univention Corporate Server (UCS),
+      an enterprise Linux distribution. Developed identity management integrations
+      and managed Debian packaging and distribution.
+    bullets:
+      - lead: "Azure AD Connector"
+        text: "Developed an Azure AD connector for UCS, enabling enterprise identity federation and cross-platform directory synchronization."
+      - lead: "Debian Packaging & Distribution"
+        text: "Managed Debian package builds and repository infrastructure for the UCS distribution, ensuring reliable software delivery."
+  - title: "DevOps / Python Developer"
+    company: "Gamma Solutions (Diggia) & Robotics and Computer Vision Lab (UEX)"
+    location: "Cáceres, Spain (On-site)"
+    dates: "Jul. 2015 - Aug. 2021"
+    context: >
+      Mix of research, Python development, and DevOps across two Cáceres-based
+      organizations. Solo DevOps for an autonomous driving pilot and the Robocomp
+      research framework.
+    bullets:
+      - lead: "5G Autonomous Driving"
+        text: "DevOps and Python development for the 'Autonomous Driving of an Electric Vehicle Fleet within the 5G Pilot Project'."
+      - lead: "Robocomp DevOps"
+        text: "DevOps for the Robocomp framework, including CI/CD, packaging, and DSR architecture development."
 content:
   life_quote: "\"Empower the person next to you, and you'll find paths where once there were only walls. In the world of development, collaboration is not just a skill, it's our most powerful tool.\""
   #life_quote: "\"Empowering each other in the DevOps community, we bridge ideas and code, embodying the open-source spirit to transform challenges into progress\""
