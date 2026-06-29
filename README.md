@@ -61,15 +61,12 @@ as release assets. The download links above point to the latest release assets.
 
 ## How to build locally?
 
-```shell
-docker run --rm -v $(pwd):/latex_content ghcr.io/orensbruli/latex-build:latest make pdf-all
-```
-
-Or for a single format:
+Requires Docker. Clone the repo and run:
 
 ```shell
-docker run --rm -v $(pwd):/latex_content ghcr.io/orensbruli/latex-build:latest make pdf FORMAT=plain
-docker run --rm -v $(pwd):/latex_content ghcr.io/orensbruli/latex-build:latest make pdf FORMAT=two-columns
+./build.sh         # builds both formats
+./build.sh plain   # plain only
+./build.sh two-columns  # two-columns only
 ```
 
 Outputs `cv-esteban-martinena-{format}.pdf` and `cv-esteban-martinena-{format}-cover.png` in the current directory.
