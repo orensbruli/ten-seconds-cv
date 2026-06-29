@@ -6,7 +6,7 @@ FORMAT=${1:-all}
 case "$FORMAT" in
   all|both)
     docker run --rm -v "$(pwd)":/latex_content \
-      ghcr.io/orensbruli/latex-build:latest \
+      "${IMAGE:-ghcr.io/orensbruli/latex-build:latest}" \
       make pdf-all
     ;;
   plain|two-columns)
