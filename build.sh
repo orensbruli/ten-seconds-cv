@@ -11,7 +11,7 @@ case "$FORMAT" in
     ;;
   plain|two-columns)
     docker run --rm -v "$(pwd)":/latex_content \
-      ghcr.io/orensbruli/latex-build:latest \
+      "${IMAGE:-ghcr.io/orensbruli/latex-build:latest}" \
       make pdf FORMAT="$FORMAT"
     ;;
   clean)
