@@ -22,27 +22,25 @@ jobs:
         run: docker pull ghcr.io/${{ github.repository_owner }}/latex-build:latest
 
       - name: Run Docker Container
-        run: docker run -v $(pwd):/latex_content --name latex-container ghcr.io/${{ github.repository_owner }}/latex-build:latest /bin/sh -c "make pdf FORMAT=two-columns && make pdf FORMAT=plain"
+        run: docker run -v $(pwd):/latex_content --name latex-container ghcr.io/${{ github.repository_owner }}/latex-build:latest make pdf-all
 
       - name: Copy PDFs from Docker Container
         run: |
-          docker cp latex-container:/latex_content/cv-esteban-martinena-two-columns.pdf esteban_martinena_cv.pdf
-          docker cp latex-container:/latex_content/cover-two-columns.png esteban_martinena_cv.png
-          docker cp latex-container:/latex_content/cv-esteban-martinenaplain.pdf esteban_martinena_cv_plain.pdf
-          docker cp latex-container:/latex_content/cover-plain.png esteban_martinena_cv_plain.png
+          docker cp latex-container:/latex_content/cv-esteban-martinena-two-columns.pdf .
+          docker cp latex-container:/latex_content/cv-esteban-martinena-plain.pdf .
 
       - name: Upload PDFs as Artifact
         uses: actions/upload-artifact@v4
         with:
           name: generated-pdf-${{ github.ref_slug }}
-          path: esteban_martinena_cv*
+          path: cv-esteban-martinena-*
 
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         if: ${{ contains(github.ref, 'tags') }}
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: "esteban_martinena_cv*"
+          file: "cv-esteban-martinena-*"
           file_glob: true
           tag: ${{ github.ref }}
           overwrite: true

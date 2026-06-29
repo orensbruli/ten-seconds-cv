@@ -31,6 +31,10 @@ pdf:
 	cp build/pdf/$(FORMAT)/$(PDF) ./cv-esteban-martinena-$(FORMAT).pdf
 	cp build/pdf/$(FORMAT)/$(COVER) ./cover-$(FORMAT).png
 
+pdf-all:
+	$(MAKE) pdf FORMAT=two-columns
+	$(MAKE) pdf FORMAT=plain
+
 clean-pdf:
 	rm -rf build/pdf/
 
