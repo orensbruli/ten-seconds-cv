@@ -28,7 +28,7 @@ pdf:
     echo "Compresing PDF..."; \
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile=$(PDF) $(RAW_PDF); \
     gs -sDEVICE=png16m -sOutputFile=cover.png -r144 $(RAW_PDF);
-	cp build/pdf/$(FORMAT)/$(PDF) ./rendered-$(FORMAT).pdf
+	cp build/pdf/$(FORMAT)/$(PDF) ./cv-esteban-martinena-$(FORMAT).pdf
 	cp build/pdf/$(FORMAT)/$(COVER) ./cover-$(FORMAT).png
 
 clean-pdf:

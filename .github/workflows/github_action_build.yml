@@ -26,9 +26,9 @@ jobs:
 
       - name: Copy PDFs from Docker Container
         run: |
-          docker cp latex-container:/latex_content/rendered-two-columns.pdf esteban_martinena_cv.pdf
+          docker cp latex-container:/latex_content/cv-esteban-martinena-two-columns.pdf esteban_martinena_cv.pdf
           docker cp latex-container:/latex_content/cover-two-columns.png esteban_martinena_cv.png
-          docker cp latex-container:/latex_content/rendered-plain.pdf esteban_martinena_cv_plain.pdf
+          docker cp latex-container:/latex_content/cv-esteban-martinenaplain.pdf esteban_martinena_cv_plain.pdf
           docker cp latex-container:/latex_content/cover-plain.png esteban_martinena_cv_plain.png
 
       - name: Upload PDFs as Artifact

@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{eso-pic}
 \usepackage{pdflscape}
+\usepackage{needspace}
 \usepackage{iftex}
 
 \ifPDFTeX
@@ -63,7 +64,7 @@
   {\color{navy}\fontsize{33}{38}\selectfont $personal_info.name$}\par
   \vspace{12pt}
   {\color{graytext}\fontsize{10}{12}\selectfont\bfseries
-  $if(personal_info.job_title)$P R O F E S S I O N A L\quad T I T L E\quad \textbullet\quad $personal_info.job_title$$else$P R O F E S S I O N A L\quad T I T L E$endif$}\par
+  $if(personal_info.job_title)$\MakeUppercase{$personal_info.job_title$}$endif$}\par
   \vspace{9pt}
   {\color{graytext}\fontsize{8}{10}\selectfont
   $for(personal_info.phone)$$personal_info.phone$$sep$ \textbar{} $endfor$ \textbar{} $personal_info.email$ \textbar{} $personal_info.location$ \textbar{} linkedin.com/in/$personal_info.linkedin$}
@@ -112,6 +113,7 @@ $endif$
 {\small
 $if(featured_experiences)$
 $for(featured_experiences)$
+\Needspace{11\baselineskip}
 \role{$featured_experiences.title$}{$featured_experiences.company$}{$featured_experiences.location$}{$featured_experiences.dates$}
 \textit{$featured_experiences.context$}
 \experiencebullets{

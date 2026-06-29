@@ -1,7 +1,7 @@
 ---
 personal_info:
   name: Esteban Martinena
-  job_title: "Senior DevOps Engineer"
+  job_title: "Senior DevOps Engineer · Robotics Engineer"
 #  job_title: "DevOps - SRE - Python & QT Developer"
   email: info@emartinena.es
   phone:
@@ -15,11 +15,11 @@ image: "https://lh3.googleusercontent.com/fife/AGXqzDkT4eBdNEfwiOFz4WOfiDOTgAg6c
 education:
   - degree: "BSc Computer Engineering"
     institution: "Extremadura University"
-    duration: "06/2005 - 07/2007"
+    duration: "06/2001 - 07/2005"
     location: "Cáceres, Spain"
   - degree: "MSc Computer Engineering"
     institution: "Extremadura University"
-    duration: "06/2001 - 07/2007"
+    duration: "06/2005 - 07/2007"
     location: "Cáceres, Spain"
 experiences:
   - role: "Senior DevOps"
@@ -34,7 +34,7 @@ experiences:
     duration: "14/02/2023 - 14/03/2024"
     location: "Boulder, Colorado, USA (Remote)"
     responsibilities: |
-      DevOps for Moveit Studio. \
+      DevOps for MoveIt Pro. \
       DevOps services for Asensus Surgical. \
   - role: "DevOps"
     company: "Open Robotics (Contractor)"
@@ -97,12 +97,8 @@ references:
     email: "matthew@operobotics.org"
     affiliation: "Open Robotics"
 summary: >
-  Senior DevOps engineer focused on CI/CD, OTA deployment to physical devices,
-  robotics software delivery, and platform automation. Served as the solo
-  DevOps engineer in the last two companies, supporting software delivery to
-  300+ mowers, improving developer workflow efficiency by 30%, reducing support
-  time to fix by 40% through active monitoring and alerts, and cutting build
-  times by 60% through caching and build optimization.
+  Senior DevOps Engineer with 9+ years building CI/CD pipelines and OTA deployment systems for robotics and autonomous fleets. Solo DevOps across multiple companies, 
+  delivering zero-rollback deployments to 300+ production devices while accelerating build performance and developer workflows through platform automation and monitoring.
 expertise_groups:
   - label: "Professional Skills"
     items:
@@ -113,9 +109,9 @@ expertise_groups:
       - Ownership and Cross-Functional collaboration
   - label: "Technical Skills"
     items:
-      - Multi-platform CI/CD
-      - Ros 2
-      - Terraform
+      - 'CI/CD Tools: CircleCI, GitHub Actions, GitLab CI, Jenkins'
+      - ROS 2
+      - Infrastructure as Code (Terraform)
       - AWS Cloud Services
       - Docker
       - Ansible
@@ -131,46 +127,43 @@ featured_experiences:
     location: "Atlanta, Georgia, USA (Remote)"
     dates: "Mar. 2024 - Present"
     context: >
-      Solo DevOps engineer responsible for the workflows used to build,
-      validate, package, and deploy software over the air to autonomous mower
-      fleets operating across the United States.
+      Sole DevOps engineer owning CI/CD and OTA deployment workflows for autonomous mower fleets operating across the United States.
     bullets:
       - lead: "Build Performance"
         text: "Reduced build times by 60% through caching and build optimization across the software delivery pipeline."
       - lead: "Fleet Deployment"
-        text: "Improved and maintained the end to end workflow used to deliver over the air software updates to 300+ production mowers."
-      - lead: "Deployment Safety"
-        text: "Created the first canary and hardware in the loop validation workflow, achieving zero rollbacks over two years across 300+ production mowers."
+        text: "Improved and maintained the end-to-end workflow used to deliver over-the-air software updates to 300+ production mowers. Created the first canary and hardware in the loop validation workflow, achieving zero rollbacks over two years across 300+ production mowers."
       - lead: "Monitoring and Support"
         text: "Reduced support time to fix by 40% by adding active monitoring, clearer alerts, and faster operational feedback loops."
       - lead: "Developer Efficiency"
         text: "Automated +40% of the development-to-release pipeline, reducing manual overhead and accelerating deployment cadence."
+      - lead: "CI/CD Reusability"
+        text: "Designed and published custom CircleCI Orbs to standardize build and deployment workflows across repositories, reducing pipeline duplication and maintenance overhead."
   - title: "DevOps"
     company: "PickNik"
     location: "Boulder, Colorado, USA (Remote)"
     dates: "Feb. 2023 - Mar. 2024"
     context: >
-      Solo DevOps engineer supporting MoveIt Studio and customer facing robotics
-      programs with a focus on reliable automation, repeatable releases, and
-      developer productivity.
+      Solo DevOps engineer across PickNik projects and clients (Movelt Studio/Pro, Asensus Surgical), with a focus on reliable automation, repeatable releases, and developer productivity.
     bullets:
-      - lead: "CI/CD"
+      - lead: "Github actions"
         text: "Implemented and maintained automation workflows used to build, test, and release software across multiple environments."
+      - lead: "Asensus Surgical Consulting"
+        text: "Redesigned and integrated GitLab repository infrastructure and CI/CD systems for client project, consolidating 20+ repos and replacing per-repo approach with shared templates."
       - lead: "Customer Delivery"
-        text: "Supported containerized delivery processes for MoveIt Pro where reliability and traceability were critical."
+        text: "Operated containerized delivery processes for MoveIt Pro, where reliability and traceability were critical."
       - lead: "Infrastructure"
-        text: "Improved tooling and operational practices used by engineering teams working on robotics software products."
+        text: "Maintained and improved CI/CD pipelines (GitHub Actions, Gitlab), Docker-based build environments, and Bash/Python deployment scripts used by engineering teams shipping robotics software."
+        
   - title: "DevOps"
     company: "Open Robotics"
     location: "Singapore (Remote)"
     dates: "Aug. 2022 - Dec. 2022"
     context: >
-      Worked on DevOps and infrastructure efforts for robotics middleware and
-      the broader ROS ecosystem, supporting reliability and maintainability
-      across shared engineering systems.
+      DevOps engineer for ROS middleware infrastructure, focused on reliability and maintainability across shared engineering systems.
     bullets:
       - lead: "Middleware Infrastructure"
-        text: "Contributed DevOps support for the Robotics Middleware Framework and related delivery workflows."
+        text: "Maintained CI/CD workflows on Github Actions and Jenkins for the Robotics Middleware Framework and its delivery pipeline."
       - lead: "ROS Ecosystem"
         text: "Supported infrastructure used by the Open Robotics ROS team for shared services and engineering operations."
       - lead: "Reliability"
