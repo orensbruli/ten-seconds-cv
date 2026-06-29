@@ -17,7 +17,7 @@ Two formats are available. Plain first, then two-columns:
     </a>
 </p>
 
-- **Plain** — single-column, serif-heavy, reference-based design.
+- **Plain** — single-column, serif-based, reference-inspired design.
 - **Two-columns** — sidebar layout with skill heatmap, based on AltaCV.
 
 Both share the same data source (`data.md`). Format-specific LaTeX templates live under `latex/plain/` and `latex/two-columns/`.
@@ -72,7 +72,7 @@ docker run --rm -v $(pwd):/latex_content ghcr.io/orensbruli/latex-build:latest m
 docker run --rm -v $(pwd):/latex_content ghcr.io/orensbruli/latex-build:latest make pdf FORMAT=two-columns
 ```
 
-Outputs `cv-esteban-martinena-{format}.pdf` and `cover-{format}.png` in the current directory.
+Outputs `cv-esteban-martinena-{format}.pdf` and `cv-esteban-martinena-{format}-cover.png` in the current directory.
 
 ## References
 

@@ -132,7 +132,7 @@ featured_experiences:
       - lead: "Build Performance"
         text: "Reduced build times by 60% through caching and build optimization across the software delivery pipeline."
       - lead: "Fleet Deployment"
-        text: "Improved and maintained the end-to-end workflow used to deliver over-the-air software updates to 300+ production mowers. Created the first canary and hardware in the loop validation workflow, achieving zero rollbacks over two years across 300+ production mowers."
+        text: "Created the first canary and hardware-in-the-loop validation workflow, achieving zero rollbacks over two years across 300+ production mowers via the end-to-end OTA deployment pipeline."
       - lead: "Monitoring and Support"
         text: "Reduced support time to fix by 40% by adding active monitoring, clearer alerts, and faster operational feedback loops."
       - lead: "Developer Efficiency"
@@ -144,16 +144,16 @@ featured_experiences:
     location: "Boulder, Colorado, USA (Remote)"
     dates: "Feb. 2023 - Mar. 2024"
     context: >
-      Solo DevOps engineer across PickNik projects and clients (Movelt Studio/Pro, Asensus Surgical), with a focus on reliable automation, repeatable releases, and developer productivity.
+      Solo DevOps engineer across PickNik projects and clients (MoveIt Studio/Pro, Asensus Surgical), with a focus on reliable automation, repeatable releases, and developer productivity.
     bullets:
-      - lead: "Github actions"
+      - lead: "GitHub Actions"
         text: "Implemented and maintained automation workflows used to build, test, and release software across multiple environments."
       - lead: "Asensus Surgical Consulting"
         text: "Redesigned and integrated GitLab repository infrastructure and CI/CD systems for client project, consolidating 20+ repos and replacing per-repo approach with shared templates."
       - lead: "Customer Delivery"
         text: "Operated containerized delivery processes for MoveIt Pro, where reliability and traceability were critical."
       - lead: "Infrastructure"
-        text: "Maintained and improved CI/CD pipelines (GitHub Actions, Gitlab), Docker-based build environments, and Bash/Python deployment scripts used by engineering teams shipping robotics software."
+        text: "Maintained and improved shared CI/CD infrastructure, Docker-based build environments, and deployment tooling relied upon by engineering teams shipping robotics software."
         
   - title: "DevOps"
     company: "Open Robotics"
