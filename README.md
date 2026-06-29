@@ -10,10 +10,10 @@ Two formats are available. Plain first, then two-columns:
 
 <p align="center">
     <a href="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/cv-esteban-martinena-plain.pdf">
-        <img width="300" src="cover-plain.png" alt="Plain CV">
+        <img width="300" src="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/cv-esteban-martinena-plain-cover.png" alt="Plain CV">
     </a>
     <a href="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/cv-esteban-martinena-two-columns.pdf">
-        <img width="300" src="cover-two-columns.png" alt="Two-columns CV">
+        <img width="300" src="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/cv-esteban-martinena-two-columns-cover.png" alt="Two-columns CV">
     </a>
 </p>
 

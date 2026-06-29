@@ -29,7 +29,7 @@ pdf:
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile=$(PDF) $(RAW_PDF); \
     gs -sDEVICE=png16m -sOutputFile=cover.png -r144 $(RAW_PDF);
 	cp build/pdf/$(FORMAT)/$(PDF) ./cv-esteban-martinena-$(FORMAT).pdf
-	cp build/pdf/$(FORMAT)/$(COVER) ./cover-$(FORMAT).png
+	cp build/pdf/$(FORMAT)/$(COVER) ./cv-esteban-martinena-$(FORMAT)-cover.png
 
 pdf-all:
 	$(MAKE) pdf FORMAT=two-columns
