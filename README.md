@@ -1,14 +1,26 @@
 # ten-seconds-cv
 
 Hi!
-My name is Esteban Martinena, a Software Engineer from Spain. 
+My name is Esteban Martinena, a Software Engineer from Spain.
 This is my resume, built with LaTeX, Pandoc, Docker...
 
+## Download
+
+Two formats are available. Plain first, then two-columns:
+
 <p align="center">
-    <a href="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/esteban_martinena_cv.pdf">
-        <img width="460" src="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/esteban_martinena_cv.png">
+    <a href="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/cv-esteban-martinena-plain.pdf">
+        <img width="300" src="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/cv-esteban-martinena-plain-cover.png" alt="Plain CV">
+    </a>
+    <a href="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/cv-esteban-martinena-two-columns.pdf">
+        <img width="300" src="https://github.com/orensbruli/ten-seconds-cv/releases/latest/download/cv-esteban-martinena-two-columns-cover.png" alt="Two-columns CV">
     </a>
 </p>
+
+- **Plain** — single-column, serif-based, reference-inspired design.
+- **Two-columns** — sidebar layout with skill heatmap, based on AltaCV.
+
+Both share the same data source (`data.md`). Format-specific LaTeX templates live under `latex/plain/` and `latex/two-columns/`.
 
 ## Why?
 As many other developers, I really hate to write or update my resume.
@@ -24,9 +36,6 @@ at the same time show some of my skills as DevOps and Software Engineer here.
 
 So, not only the PDF generated in this repository is my resume, but also the repository itself.
 
-As you can see in the commit history, it's a work in progress that started recently.
-So don't be too harsh with me :) It's NOT yet on version 1.0.
-
 ## How?
 Apart from using some nice LaTeX templates,
 I've used [Pandoc](https://pandoc.org/) to convert the Markdown file to LaTeX.
@@ -35,39 +44,32 @@ This way I can write my resume in the data.md file, and then generate the LaTeX 
 I've also used [Docker](https://www.docker.com/) to build the PDF file,
 so I (or anyone else) can build it without installing anything else.
 
-At some point, I also decided I wanted a more visual to show my skills.
-Having the GitHub heatmap in mind, I decided to create a heatmap of my skills.
-I have created a simple Python script that generates eps file with the heatmap, and then I include it in the LaTeX file.
+Data fields are shared across formats. Optional fields like `summary`, `expertise_groups`, and `featured_experiences` are used by the plain template, with fallbacks to the legacy fields for two-columns.
 
-## GitHub actions
-I have created some GitHub actions to automate the process of building the PDF file.
+I've also created a simple Python script (`heatmap.py`) that generates an EPS heatmap of my skills, used by the two-columns format.
+
+## GitHub Actions
 
 ### Docker image build
-To avoid building the docker image every time, I've created a GitHub action that builds the image and pushes it to GHCR.
+To avoid building the Docker image every time, a workflow builds it and pushes to GHCR.
 It's only triggered when the Dockerfile or requirements.txt changes.
 
 ### PDF build
-This is the main action.
-It is run on every push, and it uses the docker image built in the previous step to build the PDF file.
-After building the PDF file, it's uploaded as an artifact, so it can be downloaded from the Actions tab.
+Runs on every push. It pulls the Docker image from GHCR and runs `make pdf-all` inside it,
+which builds both formats. The resulting PDFs are uploaded as build artifacts and, on tag/release,
+as release assets. The download links above point to the latest release assets.
 
-On release, the PDF file is also uploaded as a release asset.
+## How to build locally?
 
-## How to build the PDF file locally?
-The main dependency for building the PDF file is Docker.
-All the other dependencies are installed in the Docker image.
-Clone this repository and run the following command in the root directory of the repository:
+Requires Docker. Clone the repo and run:
+
 ```shell
-docker build -t latex-cv .
-docker run -v $(pwd):/latex_content --name latex-container latex-cv /bin/sh -c "make pdf"
-docker cp latex-container:/latex_content/cv-piotr-kowalski.pdf output.pdf
-docker remove /latex-container
-
-# If you don't need to copy the PDF file from the container, you can use this command instead
-docker run -v $(pwd):/latex_content latex-cv /bin/bash -c "make pdf"
+./build.sh         # builds both formats
+./build.sh plain   # plain only
+./build.sh two-columns  # two-columns only
 ```
 
-
+Outputs `cv-esteban-martinena-{format}.pdf` and `cv-esteban-martinena-{format}-cover.png` in the current directory.
 
 ## References
 

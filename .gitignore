@@ -282,3 +282,5 @@ build/
 *.eps
 
 *.png
+
+.idea/
