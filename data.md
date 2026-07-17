@@ -127,18 +127,16 @@ featured_experiences:
     location: "Atlanta, Georgia, USA (Remote)"
     dates: "Mar. 2024 - Present"
     context: >
-      Sole DevOps engineer owning CI/CD and OTA deployment workflows for autonomous mower fleets operating across the United States.
+      Sole DevOps engineer owning CI/CD, OTA delivery, and fleet connectivity for autonomous mower deployments across the United States, including VPN migration, DNS behavior, access control, and remote operations reliability.
     bullets:
-      - lead: "Build Performance"
-        text: "Reduced build times by 60% through caching and build optimization across the software delivery pipeline."
-      - lead: "Fleet Deployment"
-        text: "Created the first canary and hardware-in-the-loop validation workflow, achieving zero rollbacks over two years across 300+ production mowers via the end-to-end OTA deployment pipeline."
-      - lead: "Monitoring and Support"
-        text: "Reduced support time to fix by 40% by adding active monitoring, clearer alerts, and faster operational feedback loops."
-      - lead: "Developer Efficiency"
-        text: "Automated +40% of the development-to-release pipeline, reducing manual overhead and accelerating deployment cadence."
-      - lead: "CI/CD Reusability"
-        text: "Designed and published custom CircleCI Orbs to standardize build and deployment workflows across repositories, reducing pipeline duplication and maintenance overhead."
+      - lead: "VPN Migration"
+        text: "Led the migration from OpenVPN to Tailscale across fleet and infrastructure workflows, redesigning connectivity for mowers, developers, CI, and private package distribution."
+      - lead: "DNS, Access Control, and Firewalls"
+        text: "Diagnosed and resolved DNS and service reachability issues during the network transition, while implementing port-level controls through access policies, AWS security groups, and iptables for SSH, rsync, HTTP, DNS, and relay traffic."
+      - lead: "Provisioning and Reliability"
+        text: "Built idempotent Ansible-based provisioning and diagnostic workflows for production and lab mowers, improving remote troubleshooting, rollout safety, and repeatable fleet configuration."
+      - lead: "Credential Provisioning"
+        text: "Maintained and refactored a custom Python-based credential provisioning tool for fleet VPN access, automating IP allocation, certificate generation, and host registration for new mower deployments."
   - title: "DevOps"
     company: "PickNik"
     location: "Boulder, Colorado, USA (Remote)"
